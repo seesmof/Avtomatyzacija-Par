@@ -10,7 +10,7 @@ Clone the repository:
 
 bash
 
-```bash
+```
 git clone https://github.com/seesmof/gcalendar-automation.git
 ```
 
