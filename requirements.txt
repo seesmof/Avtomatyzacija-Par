@@ -1,6 +1,2 @@
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
-google-api-python-client
-webbrowser
-keyboard
+schedule==1.1.0
+pyperclip==1.8.2
