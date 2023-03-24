@@ -11,7 +11,7 @@ Clone the repository:
 bash
 
 ```bash
-git clone https://github.com/your-username/class-schedule-notifier.git
+git clone https://github.com/seesmof/gcalendar-automation.git
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ git clone https://github.com/your-username/class-schedule-notifier.git
 
 3.  Run the script:
 
-`python class_schedule.py`
+`python main.py`
 
 ## Schedule Information
 
