@@ -8,9 +8,7 @@ This script requires Python 3 to run. You can download Python 3 [here](https://w
 
 Clone the repository:
 
-bash
-
-```
+```bash
 git clone https://github.com/seesmof/gcalendar-automation.git
 ```
 
@@ -28,8 +26,6 @@ git clone https://github.com/seesmof/gcalendar-automation.git
 ## Schedule Information
 
 The script displays the class schedule for the current week, based on the current date. The schedule is displayed as follows:
-
-arduino
 
 ```arduino
 - <class name> - <class time>
