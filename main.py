@@ -3,6 +3,7 @@ import webbrowser
 import pyperclip
 import datetime
 from datetime import date
+import time
 
 
 def open_stream():
@@ -26,12 +27,6 @@ else:
     this_week = "Чисельник"
 
 today = date.today()
-webbrowser.open(
-    "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
-webbrowser.open("https://news.google.com/home")
-schedule.every().day.at("20:00").do(open_stream)
-schedule.every().day.at("18:00").do(open_workout)
-
 print("\nВітаю!")
 print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
@@ -65,6 +60,13 @@ elif today.strftime("%A") == "Thursday":
     else:
         print("- Групова Динаміка Лекція -", time_three)
     print("- Вища Математика Лаба -", time_four)
+
+webbrowser.open(
+    "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
+time.sleep(2)
+webbrowser.open("https://news.google.com/home")
+schedule.every().day.at("20:00").do(open_stream)
+schedule.every().day.at("18:00").do(open_workout)
 
 
 def пн_фп():
