@@ -64,7 +64,7 @@ elif today.strftime("%A") == "Thursday":
 time.sleep(6)
 webbrowser.open(
     "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
-time.sleep(3)
+time.sleep(4)
 webbrowser.open("https://news.google.com/home")
 schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
