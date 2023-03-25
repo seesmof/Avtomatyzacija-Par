@@ -4,6 +4,15 @@ import pyperclip
 import datetime
 from datetime import date
 
+
+def open_stream():
+    webbrowser.open("https://www.twitch.tv/pixelfedya")
+
+
+def open_workout():
+    webbrowser.open("https://www.notion.so/f2b157d90c094729807a4c3d29801309")
+
+
 time_one = "8:30"
 time_two = "10:05"
 time_three = "11:55"
@@ -17,8 +26,11 @@ else:
     this_week = "Чисельник"
 
 today = date.today()
-webbrowser.open_new_tab(
+webbrowser.open(
     "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
+webbrowser.open("https://news.google.com/home")
+schedule.every().day.at("20:00").do(open_stream)
+schedule.every().day.at("18:00").do(open_workout)
 
 print("\nВітаю!")
 print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
@@ -56,81 +68,81 @@ elif today.strftime("%A") == "Thursday":
 
 
 def пн_фп():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09")
 
 
 def пн_ооп_лк():
-    webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
+    webbrowser.open("https://us02web.zoom.us/j/85793432609")
 
 
 def пн_ооп_лб():
-    webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
+    webbrowser.open("https://us02web.zoom.us/j/85793432609")
 
 
 def пн_нп():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us02web.zoom.us/j/5151534723")
     pyperclip.copy("152334")
 
 
 def чт_кдм():
-    webbrowser.open_new_tab("https://meet.google.com/hke-ztgv-wxg")
+    webbrowser.open("https://meet.google.com/hke-ztgv-wxg")
 
 
 def чт_фп():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09")
 
 
 def чт_ss_чис():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us04web.zoom.us/j/76026382394?pwd=wcmYLJnXS7RVbz7ZFu624OeGozRwgs")
 
 
 def чт_фі_зна():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/7423010976?pwd=MDBKRTVDbHZ0MDVwbStmdElodUxiZz09%20")
 
 
 def чт_вмма():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/3815612002?pwd=VW03dHdFQzk1Qnk4M0dlL2RMMlIxQT09")
 
 
 def ср_сс_чис():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://meet.google.com/sor-axaz-zxk")
 
 
 def ср_фі_зна():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/7423010976?pwd=MDBKRTVDbHZ0MDVwbStmdElodUxiZz09%20")
 
 
 def ср_нп_чис():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09")
 
 
 def ср_нп_зна():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us02web.zoom.us/j/5151534723")
     pyperclip.copy("152334")
 
 
 def вт_ам():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us02web.zoom.us/j/88030483350?pwd=YXFQYU9URVIwd1FRbkxqVFBxd2ZJdz09")
 
 
 def вт_вмма_чис():
-    webbrowser.open_new_tab(
+    webbrowser.open(
         "https://us05web.zoom.us/j/4344130497?pwd=Z05oUnB4RDJGTGRWeEFaNlRsVDlBZz09")
 
 
 def вт_кдм_зна():
-    webbrowser.open_new_tab("https://meet.google.com/arg-syjc-vcz")
+    webbrowser.open("https://meet.google.com/arg-syjc-vcz")
 
 
 # Понеділок
