@@ -15,15 +15,6 @@ def open_workout():
         "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
-def open_diary():
-    webbrowser.open_new_tab(
-        "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
-
-
-def open_news():
-    webbrowser.open_new_tab("https://news.google.com/home")
-
-
 time_one = "8:30"
 time_two = "10:05"
 time_three = "11:55"
@@ -73,13 +64,13 @@ elif today.strftime("%A") == "Thursday":
     print("- Вища Математика Лаба -", time_four)
 
 time.sleep(6)
-open_diary()
+webbrowser.open_new_tab(
+    "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 time.sleep(4)
-open_news()
+webbrowser.open_new_tab("https://news.google.com/home")
 
 schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
-schedule.every().day.at("21:00").do(open_diary)
 
 
 def пн_фп():
