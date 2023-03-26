@@ -16,7 +16,7 @@ def open_workout():
 
 
 def open_diary():
-    # webbrowser.open_new_tab(
+    webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
@@ -24,19 +24,19 @@ def open_news():
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
-time_one="8:30"
-time_two="10:05"
-time_three="11:55"
-time_four="13:25"
+time_one = "8:30"
+time_two = "10:05"
+time_three = "11:55"
+time_four = "13:25"
 
-current_week=datetime.date.today().isocalendar()[1]
-this_week=""
+current_week = datetime.date.today().isocalendar()[1]
+this_week = ""
 if current_week % 2 == 0:
-    this_week="Знаменник"
+    this_week = "Знаменник"
 else:
-    this_week="Чисельник"
+    this_week = "Чисельник"
 
-today=date.today()
+today = date.today()
 print("\nВітаю!")
 print("Сьогодні -", today.strftime("%d.%m.%Y"),
       today.strftime("%A"), this_week)
