@@ -19,6 +19,10 @@ def open_diary():
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
+def open_news():
+    webbrowser.open("https://news.google.com/home")
+
+
 time_one = "8:30"
 time_two = "10:05"
 time_three = "11:55"
@@ -67,9 +71,10 @@ elif today.strftime("%A") == "Thursday":
     print("- Вища Математика Лаба -", time_four)
 
 time.sleep(6)
-open_diary
+open_diary()
 time.sleep(4)
-webbrowser.open("https://news.google.com/home")
+open_news()
+
 schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("21:00").do(open_diary)
