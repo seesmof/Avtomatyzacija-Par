@@ -7,33 +7,39 @@ import time
 
 
 def open_stream():
-    webbrowser.open("https://www.twitch.tv/pixelfedya")
+    webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    webbrowser.open("https://www.notion.so/f2b157d90c094729807a4c3d29801309")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
 def open_diary():
-    webbrowser.open(
+    # webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
-time_one = "8:30"
-time_two = "10:05"
-time_three = "11:55"
-time_four = "13:25"
+def open_news():
+    webbrowser.open_new_tab("https://news.google.com/home")
 
-current_week = datetime.date.today().isocalendar()[1]
-this_week = ""
+
+time_one="8:30"
+time_two="10:05"
+time_three="11:55"
+time_four="13:25"
+
+current_week=datetime.date.today().isocalendar()[1]
+this_week=""
 if current_week % 2 == 0:
-    this_week = "Знаменник"
+    this_week="Знаменник"
 else:
-    this_week = "Чисельник"
+    this_week="Чисельник"
 
-today = date.today()
+today=date.today()
 print("\nВітаю!")
-print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
+print("Сьогодні -", today.strftime("%d.%m.%Y"),
+      today.strftime("%A"), this_week)
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     print("\nСьогоднішні пари:")
 else:
@@ -69,7 +75,8 @@ elif today.strftime("%A") == "Thursday":
 time.sleep(6)
 open_diary()
 time.sleep(4)
-webbrowser.open("https://news.google.com/home")
+open_news()
+
 schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("21:00").do(open_diary)
