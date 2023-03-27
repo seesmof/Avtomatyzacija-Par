@@ -7,20 +7,21 @@ import time
 
 
 def open_stream():
-    webbrowser.open("https://www.twitch.tv/pixelfedya")
+    webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    webbrowser.open("https://www.notion.so/f2b157d90c094729807a4c3d29801309")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
 def open_diary():
-    webbrowser.open(
+    webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
 def open_news():
-    webbrowser.open("https://news.google.com/home")
+    webbrowser.open_new_tab("https://news.google.com/home")
 
 
 time_one = "8:30"
@@ -69,6 +70,7 @@ elif today.strftime("%A") == "Thursday":
     else:
         print("- Групова Динаміка Лекція -", time_three)
     print("- Вища Математика Лаба -", time_four)
+print("")
 
 time.sleep(6)
 open_diary()
@@ -81,88 +83,136 @@ schedule.every().day.at("21:00").do(open_diary)
 
 
 def пн_фп():
-    webbrowser.open(
+    print("Заходимо на пару з Фізичної Підготовки\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-82987a7cc1784368b0ff097c38dc9ccb")
 
 
 def пн_ооп_лк():
-    webbrowser.open("https://us02web.zoom.us/j/85793432609")
+    print("Заходимо на лекцію з ООП\n")
+    webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-f9b5c2d8f6b349cda8a26bd92fa004cf")
 
 
 def пн_ооп_лб():
-    webbrowser.open("https://us02web.zoom.us/j/85793432609")
+    print("Заходимо на лабу з ООП\n")
+    webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-f9b5c2d8f6b349cda8a26bd92fa004cf")
 
 
 def пн_нп():
-    webbrowser.open(
+    print("Заходимо на лабу з НП\n")
+    webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/5151534723")
     pyperclip.copy("152334")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-501b28532fb54ad9845a77d2645a767e")
 
 
 def чт_кдм():
-    webbrowser.open("https://meet.google.com/hke-ztgv-wxg")
+    print("Заходимо на пару з КДМ\n")
+    webbrowser.open_new_tab("https://meet.google.com/hke-ztgv-wxg")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-1e79743dd9664de9a22e2224578cc093")
 
 
 def чт_фп():
-    webbrowser.open(
+    print("Заходимо на пару з Фізичної Підготовки\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-82987a7cc1784368b0ff097c38dc9ccb")
 
 
 def чт_ss_чис():
-    webbrowser.open(
+    print("Заходимо на пару з SS\n")
+    webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/76026382394?pwd=wcmYLJnXS7RVbz7ZFu624OeGozRwgs")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-Soft-Skills-b9f6dedc39d64e00a5cdca5458d8e5b8")
 
 
 def чт_фі_зна():
-    webbrowser.open(
+    print("Заходимо на пару з Філософії\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/7423010976?pwd=MDBKRTVDbHZ0MDVwbStmdElodUxiZz09%20")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-9b2c923231fc42d18b7893386b62c6f3#6a529e1a80804ea1bca0206efa42acec")
 
 
 def чт_вмма():
-    webbrowser.open(
+    print("Заходимо на пару з Вищої математики\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/3815612002?pwd=VW03dHdFQzk1Qnk4M0dlL2RMMlIxQT09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-cebe33ea84194b75a5e906dea8b5a2fa")
 
 
 def ср_сс_чис():
-    webbrowser.open(
+    print("Заходимо на пару з SS\n")
+    webbrowser.open_new_tab(
         "https://meet.google.com/sor-axaz-zxk")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-Soft-Skills-b9f6dedc39d64e00a5cdca5458d8e5b8")
 
 
 def ср_фі_зна():
-    webbrowser.open(
+    print("Заходимо на пару з Філософії\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/7423010976?pwd=MDBKRTVDbHZ0MDVwbStmdElodUxiZz09%20")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-9b2c923231fc42d18b7893386b62c6f3#6a529e1a80804ea1bca0206efa42acec")
 
 
 def ср_нп_чис():
-    webbrowser.open(
+    print("Заходимо на пару з НП\n")
+    webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-501b28532fb54ad9845a77d2645a767e")
 
 
 def ср_нп_зна():
-    webbrowser.open(
+    print("Заходимо на пару з НП\n")
+    webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/5151534723")
     pyperclip.copy("152334")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-501b28532fb54ad9845a77d2645a767e")
 
 
 def вт_ам():
-    webbrowser.open(
+    print("Заходимо на пару з АМ\n")
+    webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/88030483350?pwd=YXFQYU9URVIwd1FRbkxqVFBxd2ZJdz09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-67f44d640e824de6a600b3543069d2fb")
 
 
 def вт_вмма_чис():
-    webbrowser.open(
+    print("Заходимо на пару з Вищої математики\n")
+    webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4344130497?pwd=Z05oUnB4RDJGTGRWeEFaNlRsVDlBZz09")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-cebe33ea84194b75a5e906dea8b5a2fa")
 
 
 def вт_кдм_зна():
-    webbrowser.open("https://meet.google.com/arg-syjc-vcz")
+    print("Заходимо на пару з КДМ\n")
+    webbrowser.open_new_tab("https://meet.google.com/arg-syjc-vcz")
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/1-2-1e79743dd9664de9a22e2224578cc093")
 
 
 # Понеділок
 schedule.every().monday.at("08:28").do(пн_фп)
 schedule.every().monday.at("10:03").do(пн_ооп_лк)
 schedule.every().monday.at("11:53").do(пн_ооп_лб)
-schedule.every().monday.at("13:25").do(пн_нп)
+schedule.every().monday.at("13:23").do(пн_нп)
 
 # Вівторок
 schedule.every().monday.at("10:03").do(вт_ам)
@@ -192,7 +242,7 @@ if current_week % 2 == 0:
 else:
     # Open the чисельник class link
     schedule.every().thursday.at("11:53").do(чт_ss_чис)
-schedule.every().thursday.at("13:25").do(чт_вмма)
+schedule.every().thursday.at("13:23").do(чт_вмма)
 
 while True:
     schedule.run_pending()
