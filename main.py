@@ -84,7 +84,7 @@ open_news()
 schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("21:00").do(open_diary)
-schedule.every().day.at("16:00").do(open_cards)
+schedule.every().day.at("18:45").do(open_cards)
 
 
 def пн_фп():
