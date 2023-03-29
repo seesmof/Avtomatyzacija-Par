@@ -92,11 +92,13 @@ elif today.strftime("%A") == "Thursday":
     print("- Вища Математика Лаба -", time_four)
 print("")
 
+# at the program startup run the following block
 time.sleep(6)
 open_diary()
 time.sleep(4)
 open_news()
 
+# define block for scheduling routing openings throughout the day, mostly on the evening
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("18:45").do(open_cards)
 schedule.every().day.at("19:10").do(open_keyboard)
