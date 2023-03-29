@@ -28,6 +28,10 @@ def open_cards():
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
+def open_keyboard():
+    webbrowser.open_new_tab("https://monkeytype.com/")
+
+
 time_one = "8:30"
 time_two = "10:05"
 time_three = "11:55"
@@ -81,10 +85,11 @@ open_diary()
 time.sleep(4)
 open_news()
 
-schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("18:00").do(open_workout)
-schedule.every().day.at("21:00").do(open_diary)
 schedule.every().day.at("18:45").do(open_cards)
+schedule.every().day.at("19:10").do(open_keyboard)
+schedule.every().day.at("20:00").do(open_stream)
+schedule.every().day.at("21:00").do(open_diary)
 
 
 def пн_фп():
