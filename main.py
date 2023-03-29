@@ -57,11 +57,13 @@ else:
 today = date.today()
 print("\nВітаю!")
 print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
+# output text depending on the day of the week. Keep in mind that there are no classes friday-sunday, so output the text only on weekdays
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     print("\nСьогоднішні пари:")
 else:
     print("\nСьогодні пар нема!\n")
 
+# define block for each day of the week
 if today.strftime("%A") == "Monday":
     print("- Фізична Підготовка -", time_one)
     print("- ООП Лекція -", time_two)
