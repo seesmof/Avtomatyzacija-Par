@@ -45,6 +45,7 @@ time_two = "10:05"
 time_three = "11:55"
 time_four = "13:25"
 
+# define
 current_week = datetime.date.today().isocalendar()[1]
 this_week = ""
 if current_week % 2 == 0:
