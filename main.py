@@ -45,7 +45,7 @@ time_two = "10:05"
 time_three = "11:55"
 time_four = "13:25"
 
-# define
+# define block for handling numberator or denominator weeks
 current_week = datetime.date.today().isocalendar()[1]
 this_week = ""
 if current_week % 2 == 0:
@@ -53,6 +53,7 @@ if current_week % 2 == 0:
 else:
     this_week = "Чисельник"
 
+# define block for outputting today's day and classes
 today = date.today()
 print("\nВітаю!")
 print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
