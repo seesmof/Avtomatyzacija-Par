@@ -39,6 +39,12 @@ def open_keyboard():
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
+# define function for opening current tasks
+def open_tasks():
+    webbrowser.open_new_tab(
+        "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
+
+
 # define global variables for handling different class times
 time_one = "8:30"
 time_two = "10:05"
@@ -99,6 +105,7 @@ time.sleep(4)
 open_news()
 
 # define block for scheduling routing openings throughout the day, mostly on the evening
+schedule.every().day.at("16:00").do(open_tasks)
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("18:45").do(open_cards)
 schedule.every().day.at("19:10").do(open_keyboard)
