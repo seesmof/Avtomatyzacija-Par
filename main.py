@@ -7,24 +7,20 @@ from datetime import date
 import time
 
 
-# define function for opening chill stream on evening
 def open_stream():
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
-# define function for opening workout page
 def open_workout():
     webbrowser.open_new_tab(
         "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
-# define function for opening diary
 def open_diary():
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
-# define function for opening news in the morning
 def open_news():
     webbrowser.open_new_tab("https://news.google.com/home")
 
