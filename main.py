@@ -92,8 +92,6 @@ elif today.strftime("%A") == "Thursday":
 print("")
 
 # at the program startup run the following block
-time.sleep(6)
-open_diary()
 time.sleep(4)
 open_news()
 
