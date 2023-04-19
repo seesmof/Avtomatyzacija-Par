@@ -29,17 +29,14 @@ def open_news():
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
-# define function for opening flashcards to practice
 def open_cards():
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
-# define function for opening keyboard typing practice
 def open_keyboard():
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
-# define function for opening current tasks
 def open_tasks():
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
