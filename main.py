@@ -98,13 +98,9 @@ time.sleep(4)
 open_news()
 
 # define block for scheduling routing openings throughout the day, mostly on the evening
+schedule.every().day.at("16:00").do(open_cards)
+schedule.every().day.at("16:25").do(open_keyboard)
 schedule.every().day.at("16:45").do(open_tasks)
-
-
-schedule.every().day.at("18:00").do(open_workout)
-schedule.every().day.at("18:45").do(open_cards)
-schedule.every().day.at("19:10").do(open_keyboard)
-schedule.every().day.at("20:00").do(open_stream)
 schedule.every().day.at("21:00").do(open_diary)
 
 
