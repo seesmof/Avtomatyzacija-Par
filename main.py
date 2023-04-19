@@ -285,3 +285,6 @@ schedule.every().thursday.at("13:23").do(чт_вмма)
 while True:
     schedule.run_pending()
     time.sleep(60)
+
+
+# write a piece of python code that will output an alert box saying check you emails
