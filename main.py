@@ -38,9 +38,9 @@ def open_tasks():
         "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
 
 
-def open_tasks():
+def open_youtube():
     webbrowser.open_new_tab(
-        "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
+        "https://www.youtube.com/")
 
 
 # define global variables for handling different class times
