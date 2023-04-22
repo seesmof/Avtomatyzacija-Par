@@ -48,6 +48,11 @@ def open_quick():
         "https://www.notion.so/seesmof/bec5c26a16494d49a27aac4d3400bfd3")
 
 
+def open_food():
+    webbrowser.open_new_tab(
+        "https://randomoutputs.com/random-food-generator")
+
+
 # define global variables for handling different class times
 time_one = "8:30"
 time_two = "10:05"
@@ -112,6 +117,8 @@ schedule.every().sunday.at("8:00").do(open_tasks)
 schedule.every().sunday.at("9:00").do(open_youtube)
 schedule.every().sunday.at("9:30").do(open_diary)
 schedule.every().sunday.at("10:00").do(open_quick)
+schedule.every().sunday.at("11:30").do(open_youtube)
+schedule.every().sunday.at("12:00").do(open_youtube)
 
 schedule.every().day.at("16:00").do(open_cards)
 schedule.every().day.at("16:25").do(open_keyboard)
