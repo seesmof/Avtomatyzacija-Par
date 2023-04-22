@@ -92,10 +92,11 @@ elif today.strftime("%A") == "Thursday":
 print("")
 
 # at the program startup run the following block
-time.sleep(4)
-open_news()
+time.sleep(2)
+open_diary()
 
 # define block for scheduling routing openings throughout the day, mostly on the evening
+schedule.every().sunday.at("").do()
 schedule.every().day.at("16:00").do(open_cards)
 schedule.every().day.at("16:25").do(open_keyboard)
 schedule.every().day.at("16:45").do(open_tasks)
