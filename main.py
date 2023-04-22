@@ -43,6 +43,11 @@ def open_youtube():
         "https://www.youtube.com/")
 
 
+def open_youtube():
+    webbrowser.open_new_tab(
+        "https://www.youtube.com/")
+
+
 # define global variables for handling different class times
 time_one = "8:30"
 time_two = "10:05"
@@ -104,7 +109,10 @@ open_diary()
 schedule.every().sunday.at("7:00").do(open_diary)
 schedule.every().sunday.at("7:30").do(open_keyboard)
 schedule.every().sunday.at("8:00").do(open_tasks)
-schedule.every().sunday.at("9:00").do(open_tasks)
+schedule.every().sunday.at("9:00").do(open_youtube)
+schedule.every().sunday.at("9:30").do(open_diary)
+schedule.every().sunday.at("10:00").do(quick)
+
 schedule.every().day.at("16:00").do(open_cards)
 schedule.every().day.at("16:25").do(open_keyboard)
 schedule.every().day.at("16:45").do(open_tasks)
