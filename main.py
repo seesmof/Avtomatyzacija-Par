@@ -53,6 +53,11 @@ def open_food():
         "https://randomoutputs.com/random-food-generator")
 
 
+def open_article():
+    webbrowser.open_new_tab(
+        "https://longform.org/random")
+
+
 # define global variables for handling different class times
 time_one = "8:30"
 time_two = "10:05"
