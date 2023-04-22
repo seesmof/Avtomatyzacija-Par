@@ -59,7 +59,7 @@ def open_article():
 
 
 # define global variables for handling different class times
-time_one = "8:30"
+time_one = "08:30"
 time_two = "10:05"
 time_three = "11:55"
 time_four = "13:25"
@@ -116,11 +116,11 @@ time.sleep(2)
 open_diary()
 
 # for weekends
-schedule.every().day.at("7:00").do(open_diary)
-schedule.every().day.at("7:30").do(open_keyboard)
-schedule.every().sunday.at("8:00").do(open_tasks)
-schedule.every().sunday.at("9:00").do(open_youtube)
-schedule.every().sunday.at("9:30").do(open_diary)
+schedule.every().day.at("07:00").do(open_diary)
+schedule.every().day.at("07:30").do(open_keyboard)
+schedule.every().sunday.at("08:00").do(open_tasks)
+schedule.every().sunday.at("09:00").do(open_youtube)
+schedule.every().sunday.at("09:30").do(open_diary)
 schedule.every().sunday.at("10:00").do(open_quick)
 schedule.every().sunday.at("11:30").do(open_youtube)
 schedule.every().sunday.at("12:00").do(open_food)
@@ -135,11 +135,11 @@ schedule.every().sunday.at("19:00").do(open_tasks)
 schedule.every().sunday.at("20:00").do(open_youtube)
 schedule.every().sunday.at("20:30").do(open_diary)
 schedule.every().sunday.at("21:00").do(open_article)
-schedule.every().saturday.at("21:40").do(open_article)
+schedule.every().saturday.at("21:42").do(open_article)
 
-schedule.every().saturday.at("8:00").do(open_tasks)
-schedule.every().saturday.at("9:00").do(open_youtube)
-schedule.every().saturday.at("9:30").do(open_diary)
+schedule.every().saturday.at("08:00").do(open_tasks)
+schedule.every().saturday.at("09:00").do(open_youtube)
+schedule.every().saturday.at("09:30").do(open_diary)
 schedule.every().saturday.at("10:00").do(open_quick)
 schedule.every().saturday.at("11:30").do(open_youtube)
 schedule.every().saturday.at("12:00").do(open_food)
@@ -154,9 +154,9 @@ schedule.every().saturday.at("20:00").do(open_youtube)
 schedule.every().saturday.at("20:30").do(open_diary)
 schedule.every().saturday.at("21:00").do(open_article)
 
-schedule.every().friday.at("8:00").do(open_tasks)
-schedule.every().friday.at("9:00").do(open_youtube)
-schedule.every().friday.at("9:30").do(open_diary)
+schedule.every().friday.at("08:00").do(open_tasks)
+schedule.every().friday.at("09:00").do(open_youtube)
+schedule.every().friday.at("09:30").do(open_diary)
 schedule.every().friday.at("10:00").do(open_quick)
 schedule.every().friday.at("11:30").do(open_youtube)
 schedule.every().friday.at("12:00").do(open_food)
@@ -172,7 +172,7 @@ schedule.every().friday.at("20:30").do(open_diary)
 schedule.every().friday.at("21:00").do(open_article)
 
 # for weekdays
-schedule.every().monday.at("8:00").do(open_tasks)
+schedule.every().monday.at("08:00").do(open_tasks)
 schedule.every().monday.at("11:25").do(open_food)
 schedule.every().monday.at("14:45").do(open_food)
 schedule.every().monday.at("15:00").do(open_tasks)
@@ -184,7 +184,7 @@ schedule.every().monday.at("21:00").do(open_youtube)
 schedule.every().monday.at("21:30").do(open_diary)
 schedule.every().monday.at("22:00").do(open_article)
 
-schedule.every().tuesday.at("8:00").do(open_tasks)
+schedule.every().tuesday.at("08:00").do(open_tasks)
 schedule.every().tuesday.at("11:25").do(open_food)
 schedule.every().tuesday.at("14:45").do(open_food)
 schedule.every().tuesday.at("15:00").do(open_tasks)
@@ -196,7 +196,7 @@ schedule.every().tuesday.at("21:00").do(open_youtube)
 schedule.every().tuesday.at("21:30").do(open_diary)
 schedule.every().tuesday.at("22:00").do(open_article)
 
-schedule.every().wednesday.at("8:00").do(open_tasks)
+schedule.every().wednesday.at("08:00").do(open_tasks)
 schedule.every().wednesday.at("11:25").do(open_food)
 schedule.every().wednesday.at("14:45").do(open_food)
 schedule.every().wednesday.at("15:00").do(open_tasks)
@@ -208,7 +208,7 @@ schedule.every().wednesday.at("21:00").do(open_youtube)
 schedule.every().wednesday.at("21:30").do(open_diary)
 schedule.every().wednesday.at("22:00").do(open_article)
 
-schedule.every().thursday.at("8:00").do(open_tasks)
+schedule.every().thursday.at("08:00").do(open_tasks)
 schedule.every().thursday.at("11:25").do(open_food)
 schedule.every().thursday.at("14:45").do(open_food)
 schedule.every().thursday.at("15:00").do(open_tasks)
