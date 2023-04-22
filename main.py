@@ -96,7 +96,9 @@ time.sleep(2)
 open_diary()
 
 # define block for scheduling routing openings throughout the day, mostly on the evening
-schedule.every().sunday.at("").do()
+schedule.every().sunday.at("7:00").do(open_diary)
+schedule.every().sunday.at("7:30").do(open_keyboard)
+schedule.every().sunday.at("8:00").do(open_keyboard)
 schedule.every().day.at("16:00").do(open_cards)
 schedule.every().day.at("16:25").do(open_keyboard)
 schedule.every().day.at("16:45").do(open_tasks)
