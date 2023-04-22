@@ -403,4 +403,4 @@ schedule.every().thursday.at("13:23").do(чт_вмма)
 
 while True:
     schedule.run_pending()
-    time.sleep(60)
+    time.sleep(30)
