@@ -8,24 +8,24 @@ import time
 
 
 def open_stream():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Заходимо на стрім до Феді\n")
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Зара будемо бамбурити спорт\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
 def open_diary():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Дивимось у щоденник\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
 def open_news():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Читаємо новини\n")
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
