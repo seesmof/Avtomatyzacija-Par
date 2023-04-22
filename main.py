@@ -176,10 +176,7 @@ schedule.every().friday.at("20:00").do(open_youtube)
 schedule.every().friday.at("20:30").do(open_diary)
 schedule.every().friday.at("21:00").do(open_article)
 
-schedule.every().day.at("16:00").do(open_cards)
-schedule.every().day.at("16:25").do(open_keyboard)
-schedule.every().day.at("16:45").do(open_tasks)
-schedule.every().day.at("21:00").do(open_diary)
+# for weekdays
 
 
 def пн_фп():
