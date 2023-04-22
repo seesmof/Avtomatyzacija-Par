@@ -135,7 +135,7 @@ schedule.every().sunday.at("19:00").do(open_tasks)
 schedule.every().sunday.at("20:00").do(open_youtube)
 schedule.every().sunday.at("20:30").do(open_diary)
 schedule.every().sunday.at("21:00").do(open_article)
-schedule.every().sunday.at("21:39").do(open_article)
+schedule.every().saturday.at("21:40").do(open_article)
 
 schedule.every().saturday.at("8:00").do(open_tasks)
 schedule.every().saturday.at("9:00").do(open_youtube)
