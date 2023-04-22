@@ -43,9 +43,9 @@ def open_youtube():
         "https://www.youtube.com/")
 
 
-def open_youtube():
+def open_quick():
     webbrowser.open_new_tab(
-        "https://www.youtube.com/")
+        "https://www.notion.so/seesmof/bec5c26a16494d49a27aac4d3400bfd3")
 
 
 # define global variables for handling different class times
@@ -111,7 +111,7 @@ schedule.every().sunday.at("7:30").do(open_keyboard)
 schedule.every().sunday.at("8:00").do(open_tasks)
 schedule.every().sunday.at("9:00").do(open_youtube)
 schedule.every().sunday.at("9:30").do(open_diary)
-schedule.every().sunday.at("10:00").do(quick)
+schedule.every().sunday.at("10:00").do(open_quick)
 
 schedule.every().day.at("16:00").do(open_cards)
 schedule.every().day.at("16:25").do(open_keyboard)
