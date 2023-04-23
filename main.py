@@ -13,24 +13,24 @@ def open_stream():
 
 
 def open_workout():
-    print("Зара будемо бамбурити спорт\n")
+    print("Відкриваю сторінку спорту\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
 
 
 def open_diary():
-    print("Дивимось у щоденник\n")
+    print("Відкриваю щоденник\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/6be96ce35f2f4cf4bbfa18394672c30b?v=20fb27c8068e4797bb584d0e15db0956")
 
 
 def open_news():
-    print("Читаємо новини\n")
+    print("Відкриваю новини\n")
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
 def open_cards():
-    print("Робимо картки\n")
+    print("Відкриваю практику карток\n")
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
@@ -40,31 +40,31 @@ def open_keyboard():
 
 
 def open_tasks():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю сторінку з поточними завданнями\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
 
 
 def open_youtube():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю YouTube, починаємо відпочинок\n")
     webbrowser.open_new_tab(
         "https://www.youtube.com/")
 
 
 def open_quick():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю швидкі нотатки для персональних проєктів\n")
     webbrowser.open_new_tab(
         "https://www.notion.so/seesmof/bec5c26a16494d49a27aac4d3400bfd3")
 
 
 def open_food():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю сторінки з їжею. Пора піти шось похавати\n")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-food-generator")
 
 
 def open_article():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю сторінку з випадковими статтями \n")
     webbrowser.open_new_tab(
         "https://longform.org/random")
 
