@@ -64,7 +64,7 @@ def open_food():
 
 
 def open_article():
-    print("Відкриваю сторінку з випадковими статтями \n")
+    print("Відкриваю сторінку з випадковими статтями на вечір\n")
     webbrowser.open_new_tab(
         "https://longform.org/random")
 
