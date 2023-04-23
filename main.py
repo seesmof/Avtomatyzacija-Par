@@ -8,7 +8,7 @@ import time
 
 
 def open_stream():
-    print("Заходимо на стрім до Феді\n")
+    print("Відкриваю стрім PixelFedya\n")
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
@@ -30,12 +30,12 @@ def open_news():
 
 
 def open_cards():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Робимо картки\n")
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
 def open_keyboard():
-    print("Заходимо на пару з Фізичної Підготовки\n")
+    print("Відкриваю практику друку Monkeytype\n")
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
