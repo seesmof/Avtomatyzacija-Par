@@ -1,18 +1,9 @@
-# import the necessary packages
-import pytesseract
-from textblob import TextBlob
-from PIL import Image
+import schedule
+import webbrowser
+import pyperclip
+import datetime
+from datetime import date
+import time
 
-# load the input image and convert it to grayscale
-path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-image = Image.open("input.jpg")
-
-# Provide the tesseract executable location to the pytesseract library
-pytesseract.tesseract_cmd = path_to_tesseract
-
-# Pass the image object to the image_to_string() function
-# This function will extract the text from the image
-text = pytesseract.image_to_string(image)
-
-# Display the extracted text
-print(text)
+webbrowser.open_new_tab(
+    "joplin://x-callback-url/openFolder?id=57cebf0ff83f400591039def63b8bd70")
