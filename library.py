@@ -14,7 +14,7 @@ def open_stream():
 def open_workout():
     print("Відкриваю сторінку спорту\n")
     webbrowser.open_new_tab(
-        "https://www.notion.so/f2b157d90c094729807a4c3d29801309")
+        "joplin://x-callback-url/openFolder?id=8c86beb5a569443a889f8fb8303c399b")
 
 
 def open_diary():
@@ -41,7 +41,7 @@ def open_keyboard():
 def open_tasks():
     print("Відкриваю сторінку з поточними завданнями\n")
     webbrowser.open_new_tab(
-        "https://www.notion.so/seesmof/74d72bff0c9a4a328edaf1c6d41da14c?v=b78f3deaf02a4fc2a75dbcffbf478922")
+        "https://calendar.google.com/calendar")
 
 
 def open_youtube():
