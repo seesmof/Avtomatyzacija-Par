@@ -1,11 +1,20 @@
 import schedule
 import webbrowser
 import pyperclip
-import datetime
-from datetime import date
 import time
 from library import *
+import random
 
+current_time = datetime.datetime.now()
+current_hour = current_time.hour
+current_minute = current_time.minute
+am_or_pm = ""
+
+this_time = "The time is " + str(current_hour) + ":" + \
+    str(current_minute) + " " + " right now."
+
+speak_text("Greetings")
+speak_text(this_time)
 
 time_one = "08:30"
 time_two = "10:05"
@@ -16,43 +25,69 @@ current_week = datetime.date.today().isocalendar()[1]
 this_week = ""
 if current_week % 2 == 0:
     this_week = "Знаменник"
+    speak_text("This week is a Denominator")
 else:
     this_week = "Чисельник"
+    speak_text("This week is a Numerator")
 
 today = date.today()
 print("\nЗ поверненням!")
-print("Сьогодні -", today.strftime("%d.%m.%Y"), today.strftime("%A"), this_week)
+print("Сьогодні - ", today.strftime("%d.%m.%Y"),
+      today.strftime("%A"), this_week)
+t = time.localtime()
+this = time.strftime("%b %dth %Y", t)
+that = today.strftime("%A")
+here_you_go = "Today is " + this + ". " + that
+speak_text(here_you_go)
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     print("\nСьогоднішні пари:")
+    speak_text("Today's classes:")
 else:
     print("\nСьогодні пар нема!\n")
+    speak_text("There are no classes today")
 
 if today.strftime("%A") == "Monday":
-    print("- Фізична Підготовка -", time_one)
-    print("- ООП Лекція -", time_two)
-    print("- ООП Лаба -", time_three)
-    print("- Низькорівневе Програмування Лаба -", time_four)
+    print("- Фізична Підготовка at ", time_one)
+    print("- ООП Лекція at ", time_two)
+    print("- ООП Лаба at ", time_three)
+    print("- Низькорівневе Програмування Лаба at ", time_four)
+    speak_text("- Physical Education at " + time_one)
+    speak_text("- OOP Lecture at " + time_two)
+    speak_text("- OOP Lab at " + time_three)
+    speak_text("- Low Level Programming Lab at " + time_four)
 elif today.strftime("%A") == "Tuesday":
-    print("- Англійська Мова -", time_two)
+    print("- Англійська Мова at ", time_two)
+    speak_text("- English at " + time_two)
     if this_week == "Знаменник":
-        print("- КДМ Лекція -", time_three)
+        print("- КДМ Лекція at ", time_three)
+        speak_text("- Computer Discrete Maths Lecture at " + time_three)
     else:
-        print("- Вища Математика Лекція -", time_three)
+        print("- Вища Математика Лекція at ", time_three)
+        speak_text("- Calculus Lecture at " + time_three)
 elif today.strftime("%A") == "Wednesday":
     if this_week == "Знаменник":
-        print("- Філософія Семінар -", time_two)
-        print("- Низькорівневе Програмування Лаба -", time_three)
+        print("- Філософія Семінар at ", time_two)
+        speak_text("- Philosophy Practice at ", time_two)
+        print("- Низькорівневе Програмування Лаба at ", time_three)
+        speak_text("- Low Level Programming Lab at ", time_three)
     else:
-        print("- Групова Динаміка Лаба -", time_two)
-        print("- Низькорівневе Програмування Лекція -", time_three)
+        print("- Групова Динаміка Лаба at ", time_two)
+        speak_text("- Soft Skills Lab at ", time_two)
+        print("- Низькорівневе Програмування Лекція at ", time_three)
+        speak_text("- Low Level Programming Lecture at ", time_three)
 elif today.strftime("%A") == "Thursday":
-    print("- Дискретна Математика Лаба -", time_one)
-    print("- Фізична Підготовка -", time_two)
+    print("- Дискретна Математика Лаба at ", time_one)
+    speak_text("- Computer Discrete Maths Lab at ", time_one)
+    print("- Фізична Підготовка at ", time_two)
+    speak_text("- Physical Education at ", time_two)
     if this_week == "Знаменник":
-        print("- Філософія Лекція -", time_three)
+        print("- Філософія Лекція at ", time_three)
+        speak_text("- Philosophy Lecture at ", time_three)
     else:
-        print("- Групова Динаміка Лекція -", time_three)
-    print("- Вища Математика Лаба -", time_four)
+        print("- Групова Динаміка Лекція at ", time_three)
+        speak_text("- Soft Skills Lecture at ", time_three)
+    print("- Вища Математика Лаба at ", time_four)
+    speak_text("- Calculus Lab at ", time_four)
 print("")
 
 time.sleep(2)
@@ -102,4 +137,4 @@ schedule.every().thursday.at("13:23").do(чт_вмма)
 
 while True:
     schedule.run_pending()
-    time.sleep(10)
+    time.sleep(3)
