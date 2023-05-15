@@ -59,7 +59,7 @@ def open_quick():
 def open_food():
     print("Відкриваю сторінки з їжею. Пора піти шось похавати\n")
     webbrowser.open_new_tab(
-        "https://randomoutputs.com/random-food-generator")
+        "https://randomoutputs.com/random-recipe-generator?category=all")
 
 
 def open_article():
