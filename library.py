@@ -7,8 +7,20 @@ import time
 import gpt4free
 from gpt4free import Provider, quora, forefront
 import pyttsx3
-
+import requests
+import json
 engine = pyttsx3.init()
+
+
+def get_weather():
+    city = "Zaporizhzhia"
+    api_key = "acf1d8082e6dccbf5b9a72dd3c1f9cf8"
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+    response = requests.get(url)
+    data = json.loads(response.text)
+
+    return int(data['main']['temp'])
 
 
 def generate_response(input_prompt):

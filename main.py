@@ -15,6 +15,8 @@ this_time = "The time is " + str(current_hour) + ":" + \
 
 speak_text("Greetings")
 speak_text(this_time)
+weather = f"Outside it is {get_weather()} degrees Celsius."
+speak_text(weather)
 
 time_one = "08:30"
 time_two = "10:05"
@@ -47,47 +49,47 @@ else:
     speak_text("There are no classes today")
 
 if today.strftime("%A") == "Monday":
-    print("- Фізична Підготовка at ", time_one)
-    print("- ООП Лекція at ", time_two)
-    print("- ООП Лаба at ", time_three)
-    print("- Низькорівневе Програмування Лаба at ", time_four)
+    print("- Фізична Підготовка at " + time_one)
+    print("- ООП Лекція at " + time_two)
+    print("- ООП Лаба at " + time_three)
+    print("- Низькорівневе Програмування Лаба at " + time_four)
     speak_text("- Physical Education at " + time_one)
     speak_text("- OOP Lecture at " + time_two)
     speak_text("- OOP Lab at " + time_three)
     speak_text("- Low Level Programming Lab at " + time_four)
 elif today.strftime("%A") == "Tuesday":
-    print("- Англійська Мова at ", time_two)
+    print("- Англійська Мова at " + time_two)
     speak_text("- English at " + time_two)
     if this_week == "Знаменник":
-        print("- КДМ Лекція at ", time_three)
+        print("- КДМ Лекція at " + time_three)
         speak_text("- Computer Discrete Maths Lecture at " + time_three)
     else:
-        print("- Вища Математика Лекція at ", time_three)
+        print("- Вища Математика Лекція at " + time_three)
         speak_text("- Calculus Lecture at " + time_three)
 elif today.strftime("%A") == "Wednesday":
     if this_week == "Знаменник":
-        print("- Філософія Семінар at ", time_two)
-        speak_text("- Philosophy Practice at ", time_two)
-        print("- Низькорівневе Програмування Лаба at ", time_three)
-        speak_text("- Low Level Programming Lab at ", time_three)
+        print("- Філософія Семінар at " + time_two)
+        speak_text("- Philosophy Practice at " + time_two)
+        print("- Низькорівневе Програмування Лаба at " + time_three)
+        speak_text("- Low Level Programming Lab at " + time_three)
     else:
-        print("- Групова Динаміка Лаба at ", time_two)
-        speak_text("- Soft Skills Lab at ", time_two)
-        print("- Низькорівневе Програмування Лекція at ", time_three)
-        speak_text("- Low Level Programming Lecture at ", time_three)
+        print("- Групова Динаміка Лаба at " + time_two)
+        speak_text("- Soft Skills Lab at " + time_two)
+        print("- Низькорівневе Програмування Лекція at " + time_three)
+        speak_text("- Low Level Programming Lecture at " + time_three)
 elif today.strftime("%A") == "Thursday":
-    print("- Дискретна Математика Лаба at ", time_one)
-    speak_text("- Computer Discrete Maths Lab at ", time_one)
-    print("- Фізична Підготовка at ", time_two)
-    speak_text("- Physical Education at ", time_two)
+    print("- Дискретна Математика Лаба at " + time_one)
+    speak_text("- Computer Discrete Maths Lab at " + time_one)
+    print("- Фізична Підготовка at " + time_two)
+    speak_text("- Physical Education at " + time_two)
     if this_week == "Знаменник":
-        print("- Філософія Лекція at ", time_three)
-        speak_text("- Philosophy Lecture at ", time_three)
+        print("- Філософія Лекція at " + time_three)
+        speak_text("- Philosophy Lecture at " + time_three)
     else:
-        print("- Групова Динаміка Лекція at ", time_three)
-        speak_text("- Soft Skills Lecture at ", time_three)
-    print("- Вища Математика Лаба at ", time_four)
-    speak_text("- Calculus Lab at ", time_four)
+        print("- Групова Динаміка Лекція at " + time_three)
+        speak_text("- Soft Skills Lecture at " + time_three)
+    print("- Вища Математика Лаба at " + time_four)
+    speak_text("- Calculus Lab at " + time_four)
 print("")
 
 time.sleep(2)
