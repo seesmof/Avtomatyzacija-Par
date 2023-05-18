@@ -1,5 +1,3 @@
-from gpt4free import Provider, quora, forefront
-import gpt4free
 import openai
 import asyncio
 import re

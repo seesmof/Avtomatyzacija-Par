@@ -5,7 +5,7 @@ import datetime
 from datetime import date
 import time
 import gpt4free
-from gpt4free import Provider, quora, forefront
+from gpt4free import Provider
 import pyttsx3
 import requests
 import json
