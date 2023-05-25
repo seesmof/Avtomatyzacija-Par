@@ -97,17 +97,10 @@ open_diary()
 
 
 schedule.every().day.at("07:00").do(open_food)
-schedule.every().day.at("07:30").do(open_diary)
 schedule.every().day.at("11:25").do(open_food)
 schedule.every().day.at("14:45").do(open_food)
-schedule.every().day.at("16:00").do(open_tasks)
 schedule.every().day.at("18:00").do(open_workout)
-schedule.every().day.at("18:45").do(open_diary)
-schedule.every().day.at("19:00").do(open_food)
-schedule.every().day.at("19:15").do(open_tasks)
-schedule.every().day.at("21:30").do(open_diary)
-schedule.every().day.at("22:00").do(open_article)
-
+schedule.every().day.at("18:45").do(open_food)
 
 # SECTION CLASSES AUTOMATION
 
