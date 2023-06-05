@@ -1,3 +1,4 @@
+import random
 import schedule
 import webbrowser
 import pyperclip
@@ -29,6 +30,7 @@ def generate_response(input_prompt):
 
 
 def speak_text(text):
+    print(text)
     engine.say(text)
     engine.runAndWait()
 

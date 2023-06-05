@@ -1,6 +1,23 @@
-# Class Schedule Notifier
+<a name="readme-top"></a>
 
-This Python script displays the current class schedule for the week and opens the links for the Zoom classes in your default browser.
+<div align="center">
+<h1 align="center">Classes Automation</h1>
+</div>
+
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [About](#about)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Schedule Information](#schedule-information)
+- [Note](#note)
+- [Built with](#built-with)
+- [License](#license)
+
+## About
+
+This repository contains a simple Python script that is meant to automate online class attending. It runs classes on its own, as well as opens notes for them and a bunch more. Made with Python.
 
 ## Installation
 
@@ -44,6 +61,12 @@ The links for the Zoom classes are opened automatically in your default browser.
 
 This script was created for a specific class schedule and may not work correctly for other schedules. Please modify the script as needed for your own class schedule.
 
+## Built with
+
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
+
+<p align="right"><a href="#readme-top"><strong>Back to top</strong></a></p>
