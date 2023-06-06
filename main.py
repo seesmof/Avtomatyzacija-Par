@@ -1,7 +1,6 @@
 # TODO:
 
 from library import *
-from year1term2 import *
 
 current_time = datetime.datetime.now()
 current_hour = current_time.hour
