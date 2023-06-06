@@ -1,4 +1,4 @@
-reference_clips = [utils.audio.load_audio(p, 22050) for p in clips_paths]
-tts = api.TextToSpeech()
-pcm_audio = tts.tts_with_preset(
-    "your text here", voice_samples=reference_clips, preset='fast')
+from library import *
+
+inputtext = "your task is to output one fun and informal greeting word or phrase. you must not output anything else, no other words except for the phrase or a word itself"
+print(generate_response(inputtext))
