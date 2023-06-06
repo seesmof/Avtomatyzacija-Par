@@ -10,16 +10,13 @@ time_one = "08:30"
 time_two = "10:05"
 time_three = "11:55"
 time_four = "13:25"
-this_time = "The time is " + str(current_hour) + ":" + \
-    str(current_minute) + " right now."
-weather = f"Outside it is {get_weather()} degrees Celsius."
+weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
 w = wmi.WMI()
 kodi_process = w.Win32_Process(name='kodi.exe')
 
-speak_text("Greetings")
-speak_text(this_time)
+speak_text("Hiya")
 speak_text(weather)
 
 this_week = ""
@@ -30,64 +27,55 @@ else:
     this_week = "Чисельник"
     speak_text("This week is a Numerator")
 
-print("Сьогодні - ", today.strftime("%d.%m.%Y"),
+print("Сьогодні ", today.strftime("%d.%m.%Y"),
       today.strftime("%A"), this_week)
 t = time.localtime()
-this = time.strftime("%b %dth %Y", t)
-that = today.strftime("%A")
-here_you_go = "Today is " + this + ". " + that
-speak_text(here_you_go)
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     speak_text("Today's classes:")
 else:
-    speak_text("There are no classes today")
+    speak_text("No classes today")
 
 if today.strftime("%A") == "Monday":
-    speak_text("- Physical Education at " + time_one)
-    speak_text("- OOP Lecture at " + time_two)
-    speak_text("- OOP Lab at " + time_three)
-    speak_text("- Low Level Programming Lab at " + time_four)
+    speak_text("PE at " + time_one)
+    speak_text("OOP Lecture at " + time_two)
+    speak_text("OOP Lab at " + time_three)
+    speak_text("ASM Lab at " + time_four)
 elif today.strftime("%A") == "Tuesday":
-    speak_text("- English at " + time_two)
+    speak_text("English at " + time_two)
     if this_week == "Знаменник":
-        speak_text("- Computer Discrete Maths Lecture at " + time_three)
+        speak_text("Discrete Maths Lecture at " + time_three)
     else:
-        speak_text("- Calculus Lecture at " + time_three)
+        speak_text("Calculus Lecture at " + time_three)
 elif today.strftime("%A") == "Wednesday":
     if this_week == "Знаменник":
-        speak_text("- Philosophy Practice at " + time_two)
-        speak_text("- Low Level Programming Lab at " + time_three)
+        speak_text("Philosophy Practice at " + time_two)
+        speak_text("ASM Lab at " + time_three)
     else:
-        speak_text("- Soft Skills Lab at " + time_two)
-        speak_text("- Low Level Programming Lecture at " + time_three)
+        speak_text("SS Lab at " + time_two)
+        speak_text("ASM Lecture at " + time_three)
 elif today.strftime("%A") == "Thursday":
-    speak_text("- Computer Discrete Maths Lab at " + time_one)
-    speak_text("- Physical Education at " + time_two)
+    speak_text("Discrete Maths Lab at " + time_one)
+    speak_text("PE at " + time_two)
     if this_week == "Знаменник":
-        speak_text("- Philosophy Lecture at " + time_three)
+        speak_text("Philosophy Lecture at " + time_three)
     else:
-        speak_text("- Soft Skills Lecture at " + time_three)
-    speak_text("- Calculus Lab at " + time_four)
+        speak_text("SS Lecture at " + time_three)
+    speak_text("Calculus Lab at " + time_four)
 print("")
 
 time.sleep(2)
 open_diary()
 
-schedule.every().day.at("07:00").do(open_food)
-schedule.every().day.at("11:25").do(open_food)
-schedule.every().day.at("14:45").do(open_food)
-schedule.every().day.at("18:00").do(open_workout)
-schedule.every().day.at("18:45").do(open_food)
+schedule.every().day.at("07:00").do(take_nap)
+schedule.every().day.at("07:30").do(open_food)
+schedule.every().day.at("13:00").do(take_nap)
+schedule.every().day.at("13:20").do(open_food)
+schedule.every().day.at("18:30").do(open_food)
+schedule.every().day.at("21:50").do(take_nap)
 
 if kodi_process:
-    speak_text("Enjoy the movie bro!")
-    speak_text("Opening rating system")
-    webbrowser.open_new_tab(
-        "joplin://x-callback-url/openNote?id=73eb9a2fa1d444f99a72b9fdaedaee69")
-    speak_text("Opening movies list on Letterbox")
-    webbrowser.open_new_tab(
-        "https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/")
-
+    rating_system()
+    letterbox_lists()
 
 # ! CLASSES AUTOMATION
 

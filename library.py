@@ -9,6 +9,7 @@ import gpt4free
 from gpt4free import Provider
 import requests
 import json
+import ctypes
 from elevenlabs import generate, play, set_api_key
 set_api_key("0cd37791f7efe35f081355930b026d9c")
 
@@ -89,7 +90,7 @@ def open_quick():
 
 
 def open_food():
-    speak_text("Opening food page, time to go grab something to eat")
+    speak_text("Opening food page")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-recipe-generator?category=all")
 
@@ -98,6 +99,23 @@ def open_article():
     speak_text("Opening articles page")
     webbrowser.open_new_tab(
         "https://longform.org/random")
+
+
+def take_nap():
+    speak_text("Good night, bro")
+    ctypes.windll.user32.LockWorkStation()
+
+
+def rating_system():
+    speak_text("Opening rating system")
+    webbrowser.open_new_tab(
+        "joplin://x-callback-url/openNote?id=73eb9a2fa1d444f99a72b9fdaedaee69")
+
+
+def letterbox_lists():
+    speak_text("Opening movies lists")
+    webbrowser.open_new_tab(
+        "https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/")
 
 
 # ! YEAR ONE TERM TWO
@@ -248,7 +266,7 @@ def notes_сс():
 
 
 def class_фп():
-    speak_text("Starting Physical Education class")
+    speak_text("Starting PE class")
     webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09"
     )
@@ -262,18 +280,18 @@ def class_фі():
 
 
 def class_ооп():
-    speak_text("Starting Object-Oriented Programming class")
+    speak_text("Starting OOP class")
     webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
     pyperclip.copy("2023")
 
 
 def class_кдм_пр():
-    speak_text("Starting Computer Discrete Maths lab")
+    speak_text("Starting Discrete Maths lab")
     webbrowser.open_new_tab("https://meet.google.com/hke-ztgv-wxg")
 
 
 def class_кдм_лк():
-    speak_text("Starting Computer Discrete Maths lecture")
+    speak_text("Starting Discrete Maths lecture")
     webbrowser.open_new_tab("https://meet.google.com/arg-syjc-vcz")
 
 
@@ -296,7 +314,7 @@ def class_ам():
 
 
 def class_нп_пр():
-    speak_text("Starting Low Level Programming lab")
+    speak_text("Starting ASM lab")
     pyperclip.copy("152334")
     webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/5151534723"
@@ -304,21 +322,21 @@ def class_нп_пр():
 
 
 def class_нп_лк():
-    speak_text("Starting Low Level Programming lecture")
+    speak_text("Starting ASM lecture")
     webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09"
     )
 
 
 def class_сс_лк():
-    speak_text("Starting Soft Skills lecture")
+    speak_text("Starting SS lecture")
     webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/76026382394?pwd=wcmYLJnXS7RVbz7ZFu624OeGozRwgs"
     )
 
 
 def class_сс_пр():
-    speak_text("Starting Soft Skills lab")
+    speak_text("Starting SS lab")
     webbrowser.open_new_tab(
         "https://meet.google.com/sor-axaz-zxk"
     )
