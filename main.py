@@ -13,8 +13,6 @@ time_four = "13:25"
 weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
-w = wmi.WMI()
-kodi_process = w.Win32_Process(name='kodi.exe')
 
 speak_text("Hiya")
 speak_text(weather)
@@ -73,9 +71,22 @@ schedule.every().day.at("13:20").do(open_food)
 schedule.every().day.at("18:30").do(open_food)
 schedule.every().day.at("21:50").do(take_nap)
 
-if kodi_process:
-    rating_system()
-    letterbox_lists()
+
+def monitor_kodi():
+    w = wmi.WMI()
+    while True:
+        kodi_process = w.Win32_Process(name='kodi.exe')
+        if kodi_process:
+            rating_system()
+            letterbox_lists()
+            while kodi_process:
+                time.sleep(1)
+                kodi_process = w.Win32_Process(name='kodi.exe')
+        time.sleep(1)
+
+
+monitor_kodi()
+
 
 # ! CLASSES AUTOMATION
 
