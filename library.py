@@ -1,3 +1,4 @@
+from year1term2 import *
 import random
 import schedule
 import webbrowser
