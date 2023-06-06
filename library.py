@@ -115,7 +115,7 @@ def rating_system():
 def letterbox_lists():
     speak_text("Opening movies lists")
     webbrowser.open_new_tab(
-        "https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/")
+        "https://letterboxd.com/seesmof/likes/lists/by/updated/")
 
 
 # ! YEAR ONE TERM TWO
