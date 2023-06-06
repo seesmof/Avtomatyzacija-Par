@@ -1,7 +1,9 @@
-import wmi
+from elevenlabs import generate, play
 
-w = wmi.WMI()
-kodi_process = w.Win32_Process(name='kodi.exe')
+audio = generate(
+    text="Hi! My name is Bella, nice to meet you!",
+    voice="Bella",
+    model="eleven_monolingual_v1"
+)
 
-if kodi_process:
-    print('Kodi is running!')
+play(audio)

@@ -7,10 +7,10 @@ from datetime import date
 import time
 import gpt4free
 from gpt4free import Provider
-import pyttsx3
 import requests
 import json
-engine = pyttsx3.init()
+from elevenlabs import generate, play, set_api_key
+set_api_key("0cd37791f7efe35f081355930b026d9c")
 
 
 def get_weather():
@@ -29,10 +29,13 @@ def generate_response(input_prompt):
     return response
 
 
-def speak_text(text):
-    print(text)
-    engine.say(text)
-    engine.runAndWait()
+def speak_text(inputtext):
+    audio = generate(
+        text=inputtext,
+        voice="Bella",
+        model="eleven_monolingual_v1"
+    )
+    play(audio)
 
 
 def open_stream():
