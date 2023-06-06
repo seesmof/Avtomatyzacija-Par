@@ -10,7 +10,7 @@ time_two = "10:05"
 time_three = "11:55"
 time_four = "13:25"
 this_time = "The time is " + str(current_hour) + ":" + \
-    str(current_minute) + " " + " right now."
+    str(current_minute) + " right now."
 weather = f"Outside it is {get_weather()} degrees Celsius."
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
