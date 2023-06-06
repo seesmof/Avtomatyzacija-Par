@@ -1,5 +1,6 @@
 # TODO:
 
+import wmi
 from library import *
 
 current_time = datetime.datetime.now()
@@ -14,6 +15,8 @@ this_time = "The time is " + str(current_hour) + ":" + \
 weather = f"Outside it is {get_weather()} degrees Celsius."
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
+w = wmi.WMI()
+kodi_process = w.Win32_Process(name='kodi.exe')
 
 speak_text("Greetings")
 speak_text(this_time)
@@ -76,7 +79,17 @@ schedule.every().day.at("14:45").do(open_food)
 schedule.every().day.at("18:00").do(open_workout)
 schedule.every().day.at("18:45").do(open_food)
 
-# SECTION CLASSES AUTOMATION
+if kodi_process:
+    speak_text("Enjoy the movie bro!")
+    speak_text("Opening rating system")
+    webbrowser.open_new_tab(
+        "joplin://x-callback-url/openNote?id=73eb9a2fa1d444f99a72b9fdaedaee69")
+    speak_text("Opening movies list on Letterbox")
+    webbrowser.open_new_tab(
+        "https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/")
+
+
+# ! CLASSES AUTOMATION
 
 schedule.every().monday.at("08:28").do(пн_фп)
 schedule.every().monday.at("10:03").do(пн_ооп_лк)

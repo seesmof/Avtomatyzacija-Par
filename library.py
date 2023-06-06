@@ -36,63 +36,63 @@ def speak_text(text):
 
 
 def open_stream():
-    speak_text("Opening Fedya's stream\n")
+    speak_text("Opening Fedya's stream")
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    speak_text("Opening sport page, get ready for a workout\n")
+    speak_text("Opening sport page, get ready for a workout")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=8c86beb5a569443a889f8fb8303c399b")
 
 
 def open_diary():
-    speak_text("Opening diary\n")
+    speak_text("Opening diary")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=57cebf0ff83f400591039def63b8bd70")
 
 
 def open_news():
-    speak_text("Opening news\n")
+    speak_text("Opening news")
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
 def open_cards():
-    speak_text("Opening flashcards practice\n")
+    speak_text("Opening flashcards practice")
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
 def open_keyboard():
-    speak_text("Opening Monkeytype\n")
+    speak_text("Opening Monkeytype")
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
 def open_tasks():
-    speak_text("Opening current due tasks\n")
+    speak_text("Opening current due tasks")
     webbrowser.open_new_tab(
         "https://calendar.google.com/calendar")
 
 
 def open_youtube():
-    speak_text("Opening YouTube, time to take a break\n")
+    speak_text("Opening YouTube, time to take a break")
     webbrowser.open_new_tab(
         "https://www.youtube.com/")
 
 
 def open_quick():
-    speak_text("Opening quick notes\n")
+    speak_text("Opening quick notes")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openNote?id=bda1807b38f948508b9086779c92859a")
 
 
 def open_food():
-    speak_text("Opening food page, time to go grab something to eat\n")
+    speak_text("Opening food page, time to go grab something to eat")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-recipe-generator?category=all")
 
 
 def open_article():
-    speak_text("Opening articles page\n")
+    speak_text("Opening articles page")
     webbrowser.open_new_tab(
         "https://longform.org/random")
 
