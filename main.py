@@ -14,16 +14,16 @@ weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
 
-speak_text("Hiya")
+speak_text("Hiya!")
 speak_text(weather)
 
 this_week = ""
 if current_week % 2 == 0:
     this_week = "Знаменник"
-    speak_text("This week is a Denominator")
+    speak_text("This week is a Denominator!")
 else:
     this_week = "Чисельник"
-    speak_text("This week is a Numerator")
+    speak_text("This week is a Numerator!")
 
 print("Сьогодні ", today.strftime("%d.%m.%Y"),
       today.strftime("%A"), this_week)
@@ -31,7 +31,7 @@ t = time.localtime()
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     speak_text("Today's classes:")
 else:
-    speak_text("No classes today")
+    speak_text("No classes today!")
 
 if today.strftime("%A") == "Monday":
     speak_text("PE at " + time_one)
@@ -75,6 +75,7 @@ schedule.every().day.at("15:30").do(open_github)
 
 schedule.every().day.at("14:50").do(open_shopping)
 schedule.every().day.at("19:00").do(open_tasks)
+schedule.every().day.at("21:50").do(take_nap)
 
 
 def monitor_kodi():

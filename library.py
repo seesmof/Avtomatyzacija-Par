@@ -40,63 +40,63 @@ def speak_text(inputtext):
 
 
 def open_stream():
-    speak_text("Opening Fedya's stream")
+    speak_text("Opening Fedya's stream!")
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    speak_text("Opening sport page")
+    speak_text("Opening sport page!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=8c86beb5a569443a889f8fb8303c399b")
 
 
 def open_diary():
-    speak_text("Opening diary")
+    speak_text("Opening diary!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=57cebf0ff83f400591039def63b8bd70")
 
 
 def open_news():
-    speak_text("Opening news")
+    speak_text("Opening news!")
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
 def open_cards():
-    speak_text("Opening flashcards practice")
+    speak_text("Opening flashcards practice!")
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
 def open_keyboard():
-    speak_text("Opening Monkeytype")
+    speak_text("Opening Monkeytype!")
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
 def open_tasks():
-    speak_text("Opening current due tasks")
+    speak_text("Opening current due tasks!")
     webbrowser.open_new_tab(
         "https://calendar.google.com/calendar")
 
 
 def open_youtube():
-    speak_text("Opening YouTube, time to take a break")
+    speak_text("Opening YouTube, time to take a break!")
     webbrowser.open_new_tab(
         "https://www.youtube.com/")
 
 
 def open_quick():
-    speak_text("Opening quick notes")
+    speak_text("Opening quick notes!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openNote?id=bda1807b38f948508b9086779c92859a")
 
 
 def open_food():
-    speak_text("Opening food page")
+    speak_text("Opening food page!")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-recipe-generator?category=all")
 
 
 def open_article():
-    speak_text("Opening articles page")
+    speak_text("Opening articles page!")
     webbrowser.open_new_tab(
         "https://longform.org/random")
 
@@ -109,24 +109,24 @@ def open_github():
 
 
 def open_shopping():
-    speak_text("Opening groceries page")
+    speak_text("Opening groceries page!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
 
 
 def take_nap():
-    speak_text("Good night, bro")
+    speak_text("Good night, bro!")
     ctypes.windll.user32.LockWorkStation()
 
 
 def rating_system():
-    speak_text("Opening rating system")
+    speak_text("Opening rating system!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openNote?id=73eb9a2fa1d444f99a72b9fdaedaee69")
 
 
 def letterbox_lists():
-    speak_text("Opening movies lists")
+    speak_text("Opening movies lists!")
     webbrowser.open_new_tab(
         "https://letterboxd.com/seesmof/likes/lists/by/updated/")
 
@@ -279,55 +279,55 @@ def notes_сс():
 
 
 def class_фп():
-    speak_text("Starting PE class")
+    speak_text("Starting PE class!")
     webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4225643406?pwd=UENrZE9SckhzQ25XS01qMGhxdnI3dz09"
     )
 
 
 def class_фі():
-    speak_text("Starting Philosophy class")
+    speak_text("Starting Philosophy class!")
     webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/7423010976?pwd=MDBKRTVDbHZ0MDVwbStmdElodUxiZz09%20"
     )
 
 
 def class_ооп():
-    speak_text("Starting OOP class")
+    speak_text("Starting OOP class!")
     webbrowser.open_new_tab("https://us02web.zoom.us/j/85793432609")
     pyperclip.copy("2023")
 
 
 def class_кдм_пр():
-    speak_text("Starting Discrete Maths lab")
+    speak_text("Starting Discrete Maths lab!")
     webbrowser.open_new_tab("https://meet.google.com/hke-ztgv-wxg")
 
 
 def class_кдм_лк():
-    speak_text("Starting Discrete Maths lecture")
+    speak_text("Starting Discrete Maths lecture!")
     webbrowser.open_new_tab("https://meet.google.com/arg-syjc-vcz")
 
 
 def class_вмма_пр():
-    speak_text("Starting Calculus lab")
+    speak_text("Starting Calculus lab!")
     webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/3815612002?pwd=VW03dHdFQzk1Qnk4M0dlL2RMMlIxQT09")
 
 
 def class_вмма_лк():
-    speak_text("Starting Calculus lecture")
+    speak_text("Starting Calculus lecture!")
     webbrowser.open_new_tab(
         "https://us05web.zoom.us/j/4344130497?pwd=Z05oUnB4RDJGTGRWeEFaNlRsVDlBZz09")
 
 
 def class_ам():
-    speak_text("Starting English class")
+    speak_text("Starting English class!")
     webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/88030483350?pwd=YXFQYU9URVIwd1FRbkxqVFBxd2ZJdz09")
 
 
 def class_нп_пр():
-    speak_text("Starting ASM lab")
+    speak_text("Starting ASM lab!")
     pyperclip.copy("152334")
     webbrowser.open_new_tab(
         "https://us02web.zoom.us/j/5151534723"
@@ -335,21 +335,21 @@ def class_нп_пр():
 
 
 def class_нп_лк():
-    speak_text("Starting ASM lecture")
+    speak_text("Starting ASM lecture!")
     webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09"
     )
 
 
 def class_сс_лк():
-    speak_text("Starting SS lecture")
+    speak_text("Starting SS lecture!")
     webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/76026382394?pwd=wcmYLJnXS7RVbz7ZFu624OeGozRwgs"
     )
 
 
 def class_сс_пр():
-    speak_text("Starting SS lab")
+    speak_text("Starting SS lab!")
     webbrowser.open_new_tab(
         "https://meet.google.com/sor-axaz-zxk"
     )
