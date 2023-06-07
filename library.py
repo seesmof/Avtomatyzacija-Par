@@ -45,7 +45,7 @@ def open_stream():
 
 
 def open_workout():
-    speak_text("Opening sport page, get ready for a workout")
+    speak_text("Opening sport page")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=8c86beb5a569443a889f8fb8303c399b")
 
@@ -99,6 +99,19 @@ def open_article():
     speak_text("Opening articles page")
     webbrowser.open_new_tab(
         "https://longform.org/random")
+
+
+def open_github():
+    speak_text("Time to Code!")
+    webbrowser.open_new_tab(
+        "https://github.com/seesmof"
+    )
+
+
+def open_shopping():
+    speak_text("Opening groceries page")
+    webbrowser.open_new_tab(
+        "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
 
 
 def take_nap():
