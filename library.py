@@ -58,7 +58,7 @@ def open_workout():
 def open_diary():
     print("Opening diary!")
     webbrowser.open_new_tab(
-        "joplin://x-callback-url/openFolder?id=57cebf0ff83f400591039def63b8bd70")
+        "joplin://x-callback-url/openNote?id=43f449a2e8f7494199b59758f917e64f")
 
 
 def open_news():
