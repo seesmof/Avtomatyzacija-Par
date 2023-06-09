@@ -40,93 +40,93 @@ def speak_text(inputtext):
 
 
 def open_stream():
-    speak_text("Opening Fedya's stream!")
+    print("Opening Fedya's stream!")
     webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
 
 
 def open_workout():
-    speak_text("Opening sport page!")
+    print("Opening sport page!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=8c86beb5a569443a889f8fb8303c399b")
 
 
 def open_diary():
-    speak_text("Opening diary!")
+    print("Opening diary!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=57cebf0ff83f400591039def63b8bd70")
 
 
 def open_news():
-    speak_text("Opening news!")
+    print("Opening news!")
     webbrowser.open_new_tab("https://news.google.com/home")
 
 
 def open_cards():
-    speak_text("Opening flashcards practice!")
+    print("Opening flashcards practice!")
     webbrowser.open_new_tab("https://zorbi.app/decks")
 
 
 def open_keyboard():
-    speak_text("Opening Monkeytype!")
+    print("Opening Monkeytype!")
     webbrowser.open_new_tab("https://monkeytype.com/")
 
 
 def open_tasks():
-    speak_text("Opening current due tasks!")
+    print("Opening current due tasks!")
     webbrowser.open_new_tab(
         "https://calendar.google.com/calendar")
 
 
 def open_youtube():
-    speak_text("Opening YouTube, time to take a break!")
+    print("Opening YouTube, time to take a break!")
     webbrowser.open_new_tab(
         "https://www.youtube.com/")
 
 
 def open_quick():
-    speak_text("Opening quick notes!")
+    print("Opening quick notes!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openNote?id=bda1807b38f948508b9086779c92859a")
 
 
 def open_food():
-    speak_text("Opening food page!")
+    print("Opening food page!")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-recipe-generator?category=all")
 
 
 def open_article():
-    speak_text("Opening articles page!")
+    print("Opening articles page!")
     webbrowser.open_new_tab(
         "https://longform.org/random")
 
 
 def open_github():
-    speak_text("Time to Code!")
+    print("Time to Code!")
     webbrowser.open_new_tab(
         "https://github.com/seesmof"
     )
 
 
 def open_shopping():
-    speak_text("Opening groceries page!")
+    print("Opening groceries page!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
 
 
 def take_nap():
-    speak_text("Good night, bro!")
+    print("Good night, bro!")
     ctypes.windll.user32.LockWorkStation()
 
 
 def rating_system():
-    speak_text("Opening rating system!")
+    print("Opening rating system!")
     webbrowser.open_new_tab(
         "joplin://x-callback-url/openNote?id=73eb9a2fa1d444f99a72b9fdaedaee69")
 
 
 def letterbox_lists():
-    speak_text("Opening movies lists!")
+    print("Opening movies lists!")
     webbrowser.open_new_tab(
         "https://letterboxd.com/seesmof/likes/lists/by/updated/")
 

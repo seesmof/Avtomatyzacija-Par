@@ -14,51 +14,48 @@ weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
 
-speak_text("Hiya!")
-speak_text(weather)
-
 this_week = ""
 if current_week % 2 == 0:
     this_week = "Знаменник"
-    speak_text("This week is a Denominator!")
+    print("This week is a Denominator!")
 else:
     this_week = "Чисельник"
-    speak_text("This week is a Numerator!")
+    print("This week is a Numerator!")
 
 print("Сьогодні ", today.strftime("%d.%m.%Y"),
       today.strftime("%A"), this_week)
 t = time.localtime()
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
-    speak_text("Today's classes:")
+    print("Today's classes:")
 else:
-    speak_text("No classes today!")
+    print("No classes today!")
 
 if today.strftime("%A") == "Monday":
-    speak_text("PE at " + time_one)
-    speak_text("OOP Lecture at " + time_two)
-    speak_text("OOP Lab at " + time_three)
-    speak_text("ASM Lab at " + time_four)
+    print("PE at " + time_one)
+    print("OOP Lecture at " + time_two)
+    print("OOP Lab at " + time_three)
+    print("ASM Lab at " + time_four)
 elif today.strftime("%A") == "Tuesday":
-    speak_text("English at " + time_two)
+    print("English at " + time_two)
     if this_week == "Знаменник":
-        speak_text("Discrete Maths Lecture at " + time_three)
+        print("Discrete Maths Lecture at " + time_three)
     else:
-        speak_text("Calculus Lecture at " + time_three)
+        print("Calculus Lecture at " + time_three)
 elif today.strftime("%A") == "Wednesday":
     if this_week == "Знаменник":
-        speak_text("Philosophy Practice at " + time_two)
-        speak_text("ASM Lab at " + time_three)
+        print("Philosophy Practice at " + time_two)
+        print("ASM Lab at " + time_three)
     else:
-        speak_text("SS Lab at " + time_two)
-        speak_text("ASM Lecture at " + time_three)
+        print("SS Lab at " + time_two)
+        print("ASM Lecture at " + time_three)
 elif today.strftime("%A") == "Thursday":
-    speak_text("Discrete Maths Lab at " + time_one)
-    speak_text("PE at " + time_two)
+    print("Discrete Maths Lab at " + time_one)
+    print("PE at " + time_two)
     if this_week == "Знаменник":
-        speak_text("Philosophy Lecture at " + time_three)
+        print("Philosophy Lecture at " + time_three)
     else:
-        speak_text("SS Lecture at " + time_three)
-    speak_text("Calculus Lab at " + time_four)
+        print("SS Lecture at " + time_three)
+    print("Calculus Lab at " + time_four)
 print("")
 
 time.sleep(2)
