@@ -1,18 +1,19 @@
 from library import *
 
-from pynput import keyboard
-import webbrowser
-import win32gui
-import win32con
+
+def on_keystroke():
+    webbrowser.open("https://youtu.be/MVPTGNGiI-4")
+
+    sessions = AudioUtilities.GetAllSessions()
+    for session in sessions:
+        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+        volume.SetMasterVolume(0.4, None)
+
+    time.sleep(3)
+
+    ctypes.windll.user32.LockWorkStation()
 
 
-def on_press(key):
-    if key == keyboard.Key.ctrl_l and keyboard.Key.shift_l and key.char == "'":
-        webbrowser.open("https://youtu.be/MVPTGNGiI-4")
-        hwnd = win32gui.GetForegroundWindow()
-        win32gui.ShowWindow(hwnd, win32con.SW_MINIMIZE)
-
-
-listener = keyboard.Listener(on_press=on_press)
-listener.start()
-listener.join()
+keyboard.add_hotkey("ctrl+shift+'", on_keystroke)
+print("Waiting for hotkey")
+keyboard.wait()
