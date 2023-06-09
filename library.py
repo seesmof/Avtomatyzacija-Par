@@ -134,18 +134,6 @@ def letterbox_lists():
         "https://letterboxd.com/seesmof/likes/lists/by/updated/")
 
 
-def on_keystroke():
-    webbrowser.open("https://youtu.be/MVPTGNGiI-4")
-
-    sessions = AudioUtilities.GetAllSessions()
-    for session in sessions:
-        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
-        volume.SetMasterVolume(0.4, None)
-
-    time.sleep(3)
-
-    ctypes.windll.user32.LockWorkStation()
-
 # ! YEAR ONE TERM TWO
 
 
