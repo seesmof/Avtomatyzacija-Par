@@ -14,4 +14,5 @@ def monitor_kodi():
         time.sleep(1)
 
 
+print("Monitoring for Kodi...")
 monitor_kodi()
