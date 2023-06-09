@@ -1,3 +1,5 @@
+import sys
+import os
 from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
 import keyboard
 import random

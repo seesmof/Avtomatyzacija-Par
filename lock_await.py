@@ -13,6 +13,8 @@ def on_keystroke():
 
     ctypes.windll.user32.LockWorkStation()
 
+    os.execv(__file__, sys.argv)
+
 
 keyboard.add_hotkey("ctrl+shift+'", on_keystroke)
 print("Waiting for hotkey")

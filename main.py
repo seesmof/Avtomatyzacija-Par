@@ -11,7 +11,6 @@ weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
 
-
 print("Greetings")
 print("Today is " + today.strftime("%d.%m.%Y"))
 print(weather)
@@ -77,24 +76,7 @@ schedule.every().day.at("19:00").do(open_tasks)
 schedule.every().day.at("21:50").do(take_nap)
 
 
-def monitor_kodi():
-    w = wmi.WMI()
-    while True:
-        kodi_process = w.Win32_Process(name='kodi.exe')
-        if kodi_process:
-            rating_system()
-            letterbox_lists()
-            while kodi_process:
-                time.sleep(1)
-                kodi_process = w.Win32_Process(name='kodi.exe')
-        time.sleep(1)
-
-
-monitor_kodi()
-
-
 # ! CLASSES AUTOMATION
-
 schedule.every().monday.at("08:28").do(пн_фп)
 schedule.every().monday.at("10:03").do(пн_ооп_лк)
 schedule.every().monday.at("11:53").do(пн_ооп_лб)
