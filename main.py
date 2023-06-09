@@ -1,6 +1,3 @@
-# TODO:
-
-import wmi
 from library import *
 
 current_time = datetime.datetime.now()
@@ -13,6 +10,11 @@ time_four = "13:25"
 weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
+
+
+print("Greetings")
+print("Today is " + today.strftime("%d.%m.%Y"))
+print(weather)
 
 this_week = ""
 if current_week % 2 == 0:

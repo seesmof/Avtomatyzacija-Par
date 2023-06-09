@@ -1,3 +1,5 @@
+from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
+import keyboard
 import random
 import schedule
 import webbrowser
@@ -10,6 +12,7 @@ from gpt4free import Provider
 import requests
 import json
 import ctypes
+import wmi
 from elevenlabs import generate, play, set_api_key
 set_api_key("0cd37791f7efe35f081355930b026d9c")
 
@@ -130,6 +133,18 @@ def letterbox_lists():
     webbrowser.open_new_tab(
         "https://letterboxd.com/seesmof/likes/lists/by/updated/")
 
+
+def on_keystroke():
+    webbrowser.open("https://youtu.be/MVPTGNGiI-4")
+
+    sessions = AudioUtilities.GetAllSessions()
+    for session in sessions:
+        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+        volume.SetMasterVolume(0.4, None)
+
+    time.sleep(3)
+
+    ctypes.windll.user32.LockWorkStation()
 
 # ! YEAR ONE TERM TWO
 
