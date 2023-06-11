@@ -73,7 +73,7 @@ def get_menu_choice():
     speed = "2"
     if mode == "1":
         speed = input(
-            "\nHow fast would you like to play?\n1. Slow\n2. Medium\n3. Fast\n4. Fastest\n: ")
+            "\nHow fast would you like it to play?\n1. Slow\n2. Medium\n3. Fast\n4. Fastest\n: ")
     return board_size + "," + mode + "," + speed
 
 
