@@ -62,42 +62,46 @@ def get_menu_choice():
     board_size = input("Enter board size: ")
     mode = input(
         "\nHow would you like to play?\n1. Watch game play itself\n2. Confirm each move\n: ")
-    speed = input(
-        "\nHow fast would you like to play?\n1. Slow\n2. Medium\n3. Fast\n4. Fastest\n: ")
+    speed = "2"
+    if mode == "1":
+        speed = input(
+            "\nHow fast would you like to play?\n1. Slow\n2. Medium\n3. Fast\n4. Fastest\n: ")
     return board_size + "," + mode + "," + speed
 
 
-# Example usage
-choice = get_menu_choice()
-print()
-board_size, mode, speed = choice.split(",")
+def main():
+    choice = get_menu_choice()
+    print()
+    board_size, mode, speed = choice.split(",")
 
-if speed == "1":
-    speed = 2
-elif speed == "2":
-    speed = 1
-elif speed == "3":
-    speed = 0.5
-else:
-    speed = 0.2
-
-board = Board(int(board_size))
-board.display()
-
-counter = 0  # step 1
-
-while True:
-    board.apply_rules()
-    print("\n\033[90mGeneration " + str(counter) + "\033[0m\n")
-    board.display()
-    print("\n")
-    counter += 1  # step 2
-    if mode == "1":
-        time.sleep(speed)
+    if speed == "1":
+        speed = 2
+    elif speed == "2":
+        speed = 1
+    elif speed == "3":
+        speed = 0.5
     else:
-        input("\033[37mPress enter to continue...\033[0m\n")
+        speed = 0.15
 
-    if all(cell.state == 0 for row in board.board for cell in row):  # step 3
-        print(
-            f"The game is over after {counter} {'generation' if counter == 1 else 'generations'}.\n")
-        break  # step 4
+    board = Board(int(board_size))
+    counter = 0
+
+    while True:
+        board.apply_rules()
+        print("\n\033[90mGeneration " + str(counter) + "\033[0m\n")
+        board.display()
+        print("\n")
+        counter += 1
+        if mode == "1":
+            time.sleep(speed)
+        else:
+            input("\033[37mPress enter to continue...\033[0m\n")
+
+        if all(cell.state == 0 for row in board.board for cell in row):
+            print(
+                f"\033[1mCongratulations!\033[0m\nThe game is over after {counter} {'generation' if counter == 1 else 'generations'}.\n")
+            break
+
+
+if __name__ == "__main__":
+    main()
