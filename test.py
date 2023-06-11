@@ -14,11 +14,14 @@ class Board:
                        for _ in range(size)] for _ in range(size)]
 
     def get_neighbors(self, row, col):
+        # Get all neighbors of a cell
         neighbors = []
         for i in range(-1, 2):
             for j in range(-1, 2):
+                # Skip the current cell
                 if i == 0 and j == 0:
                     continue
+                # Skip cells that are out of the board
                 elif row + i < 0 or row + i >= self.size or col + j < 0 or col + j >= self.size:
                     continue
                 else:
@@ -26,6 +29,7 @@ class Board:
         return neighbors
 
     def apply_rules(self):
+        # Create a new board to store the next generation
         new_board = [[Cell(0) for _ in range(self.size)]
                      for _ in range(self.size)]
         for i in range(self.size):
@@ -33,17 +37,23 @@ class Board:
                 state = self.board[i][j].state
                 neighbors = self.get_neighbors(i, j)
                 live_neighbors = sum(neighbors)
+                # If a cell is alive and has fewer than 2 neighbors, it dies
                 if state == 1 and live_neighbors < 2:
                     new_board[i][j].state = 0
+                # If a cell is alive and has 2 or 3 neighbors, it lives
                 elif state == 1 and (live_neighbors == 2 or live_neighbors == 3):
                     new_board[i][j].state = 1
+                # If a cell is alive and has more than 3 neighbors, it dies
                 elif state == 1 and live_neighbors > 3:
                     new_board[i][j].state = 0
+                # If a cell is dead and has exactly 3 neighbors, it comes to life
                 elif state == 0 and live_neighbors == 3:
                     new_board[i][j].state = 1
+        # Update the board with the new generation
         self.board = new_board
 
     def display(self):
+        # Print the board
         for i in range(self.size):
             for j in range(self.size):
                 if self.board[i][j].state == 1:
@@ -55,6 +65,7 @@ class Board:
 
 
 def get_menu_choice():
+    # Get user input for board size, mode, and speed
     print("\n\033[1mWelcome to the Game of Life!\033[0m\n")
     board_size = input("Enter board size: ")
     mode = input(
@@ -67,10 +78,12 @@ def get_menu_choice():
 
 
 def main():
+    # Run the Game of Life simulation
     choice = get_menu_choice()
     print()
     board_size, mode, speed = choice.split(",")
 
+    # Convert speed input to a float
     if speed == "1":
         speed = 2
     elif speed == "2":
@@ -80,20 +93,23 @@ def main():
     else:
         speed = 0.15
 
+    # Create the board and start the simulation
     board = Board(int(board_size))
     counter = 0
-
     while True:
         board.apply_rules()
         print("\n\033[90mGeneration " + str(counter) + "\033[0m\n")
         board.display()
         print("\n")
         counter += 1
+
+        # Wait for user input or a certain amount of time
         if mode == "1":
             time.sleep(speed)
         else:
             input("\033[37mPress enter to continue...\033[0m\n")
 
+        # If all cells are dead, end the simulation
         if all(cell.state == 0 for row in board.board for cell in row):
             print(
                 f"\033[1mCongratulations!\033[0m\nThe game is over after {counter} {'generation' if counter == 1 else 'generations'}.\n")
