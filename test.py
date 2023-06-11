@@ -66,14 +66,14 @@ class Board:
 
 def get_menu_choice():
     # Get user input for board size, mode, and speed
-    print("\n\033[1mWelcome to the Game of Life!\033[0m\n")
-    board_size = input("Enter board size: ")
+    print("\n\033[1mЛаскаво просимо!\033[0m\n")
+    board_size = input("Введіть розмір дошки: ")
     mode = input(
-        "\nHow would you like to play?\n1. Watch game play itself\n2. Confirm each move\n: ")
+        "\nЯк би ви хотіли грати?\n1. Спостерігайте за грою\n2. Підтверджувати кожен крок\n: ")
     speed = "2"
     if mode == "1":
         speed = input(
-            "\nHow fast would you like it to play?\n1. Slow\n2. Medium\n3. Fast\n4. Fastest\n: ")
+            "\nОберіть швидкіст гри\n1. Повільна\n2. Середня\n3. Швидка\n4. Найшвидша\n: ")
     return board_size + "," + mode + "," + speed
 
 
@@ -98,7 +98,7 @@ def main():
     counter = 0
     while True:
         board.apply_rules()
-        print("\n\033[90mGeneration " + str(counter) + "\033[0m\n")
+        print("\n\033[90mПокоління " + str(counter) + "\033[0m\n")
         board.display()
         print("\n")
         counter += 1
@@ -112,7 +112,7 @@ def main():
         # If all cells are dead, end the simulation
         if all(cell.state == 0 for row in board.board for cell in row):
             print(
-                f"\033[1mCongratulations!\033[0m\nThe game is over after {counter} {'generation' if counter == 1 else 'generations'}.\n")
+                f"\033[1mВітаємо!\033[0m\nГра завершилась після {counter} {'поколінь' if counter == 1 else 'покоління'}.\n")
             break
 
 
