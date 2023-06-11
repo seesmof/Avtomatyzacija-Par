@@ -14,7 +14,6 @@ class Board:
                        for _ in range(size)] for _ in range(size)]
 
     def get_neighbors(self, row, col):
-        # Returns a list of the states of the 8 neighbors of the cell at (row, col)
         neighbors = []
         for i in range(-1, 2):
             for j in range(-1, 2):
@@ -27,7 +26,6 @@ class Board:
         return neighbors
 
     def apply_rules(self):
-        # Applies the rules of the game to each cell and updates its state
         new_board = [[Cell(0) for _ in range(self.size)]
                      for _ in range(self.size)]
         for i in range(self.size):
@@ -46,7 +44,6 @@ class Board:
         self.board = new_board
 
     def display(self):
-        # Displays the board
         for i in range(self.size):
             for j in range(self.size):
                 if self.board[i][j].state == 1:
