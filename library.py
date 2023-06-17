@@ -133,7 +133,7 @@ def rating_system():
 def letterbox_lists():
     print("Opening movies lists!")
     webbrowser.open_new_tab(
-        "https://letterboxd.com/seesmof/likes/lists/by/updated/")
+        "https://letterboxd.com/seesmof/watchlist/by/release/")
 
 
 # ! YEAR ONE TERM TWO
