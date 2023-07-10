@@ -1,5 +1,7 @@
 from library import *
 
+# VARIABLES
+
 current_time = datetime.datetime.now()
 current_hour = current_time.hour
 current_minute = current_time.minute
@@ -11,10 +13,11 @@ weather = f"Outside its {get_weather()} degrees"
 current_week = datetime.date.today().isocalendar()[1]
 today = date.today()
 
+# GREETINGS
+
 print("Greetings")
 print("Today is " + today.strftime("%d.%m.%Y"))
 print(weather)
-
 this_week = ""
 if current_week % 2 == 0:
     this_week = "Знаменник"
@@ -26,11 +29,16 @@ else:
 print("Сьогодні ", today.strftime("%d.%m.%Y"),
       today.strftime("%A"), this_week)
 t = time.localtime()
+
+# CLASSES
+
+# TODO: Fill in the new classes from year two term one here
+
+''' OLD CLASSES BELOW, USE AS TEMPLATE 
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
     print("Today's classes:")
 else:
     print("No classes today!")
-
 if today.strftime("%A") == "Monday":
     print("PE at " + time_one)
     print("OOP Lecture at " + time_two)
@@ -58,6 +66,9 @@ elif today.strftime("%A") == "Thursday":
         print("SS Lecture at " + time_three)
     print("Calculus Lab at " + time_four)
 print("")
+'''
+
+# AUTOMATION
 
 time.sleep(2)
 open_diary()
