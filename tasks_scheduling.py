@@ -68,16 +68,6 @@ schedule.every().day.at("06:20").do(open_food)
 schedule.every().day.at("11:25").do(open_food)
 schedule.every().day.at("18:00").do(open_food)
 
-schedule.every().day.at("07:00").do(open_github)
-schedule.every().day.at("15:30").do(open_github)
-
-schedule.every().day.at("14:50").do(open_shopping)
-schedule.every().day.at("19:00").do(open_tasks)
-schedule.every().day.at("21:50").do(take_nap)
-
-
-# ! CLASSES AUTOMATION
-
 while True:
     schedule.run_pending()
     time.sleep(3)
