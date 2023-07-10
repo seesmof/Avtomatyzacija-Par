@@ -62,8 +62,6 @@ print("")
 time.sleep(2)
 open_diary()
 
-schedule.every().day.at("05:40").do(open_workout)
-
 schedule.every().day.at("06:20").do(open_food)
 schedule.every().day.at("11:25").do(open_food)
 schedule.every().day.at("18:00").do(open_food)
