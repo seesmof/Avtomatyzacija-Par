@@ -49,6 +49,10 @@ def speak_text(*args):
     engine.runAndWait()
 
 
+def close_window():
+    speak_text("Close the window.")
+
+
 def mail():
     speak_text("Opening mail.")
     webbrowser.open_new_tab("https://mail.google.com/mail/u/0/#inbox")

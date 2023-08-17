@@ -101,6 +101,7 @@ if today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Thursday" or to
     schedule.every().day.at("18:00").do(workout, CARDIO_WORKOUT_LINK)
 else:
     schedule.every().day.at("18:00").do(workout)
+schedule.every().day.at("20:00").do(close_window)
 schedule.every().day.at("20:00").do(food)
 schedule.every().day.at("21:30").do(sleep)
 
