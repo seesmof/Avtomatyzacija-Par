@@ -54,6 +54,11 @@ def mail():
     webbrowser.open_new_tab("https://mail.google.com/mail/u/0/#inbox")
 
 
+def tasks():
+    speak_text("Opening tasks.")
+    webbrowser.open_new_tab("https://habitica.com/")
+
+
 def workout(page="joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e07511e6e"):
     motivational_phrases = [
         "You've got this!",

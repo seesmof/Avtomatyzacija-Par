@@ -89,7 +89,6 @@ speak_text("")
 
 time.sleep(1)
 speak_text("Don't forget to make a daily donate.")
-time.sleep(3)
 news()
 time.sleep(3)
 mail()
