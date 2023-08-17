@@ -47,8 +47,6 @@ else:
     this_week = "Чисельник"
     speak_text("This week is a Numerator!")
 
-t = time.localtime()
-
 # CLASSES
 
 # TODO: Fill in the new classes from year two term one here
@@ -90,12 +88,20 @@ speak_text("")
 # AUTOMATION
 
 time.sleep(1)
-diary()
+speak_text("Don't forget to make a daily donate.")
+time.sleep(3)
+news()
+time.sleep(3)
+mail()
 
 schedule.every().day.at("07:30").do(food)
 schedule.every().day.at("11:25").do(food)
+schedule.every().day.at("15:00").do(shopping)
 schedule.every().day.at("17:00").do(food)
-schedule.every().day.at("18:00").do(workout)
+if today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Thursday" or today.strftime("%A") == "Saturday":
+    schedule.every().day.at("18:00").do(workout, CARDIO_WORKOUT_LINK)
+else:
+    schedule.every().day.at("18:00").do(workout)
 schedule.every().day.at("20:00").do(food)
 schedule.every().day.at("21:30").do(sleep)
 

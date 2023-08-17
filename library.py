@@ -23,6 +23,7 @@ set_api_key("0cd37791f7efe35f081355930b026d9c")
 engine = pyttsx4.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
+CARDIO_WORKOUT_LINK = "https://youtu.be/ylxSQ_5WbMQ?t=50"
 
 
 def get_weather():
@@ -48,10 +49,70 @@ def speak_text(*args):
     engine.runAndWait()
 
 
-def catch_up():
-    news()
-    time.sleep(3)
-    mail()
+def mail():
+    speak_text("Opening mail.")
+    webbrowser.open_new_tab("https://mail.google.com/mail/u/0/#inbox")
+
+
+def workout(page="joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e07511e6e"):
+    motivational_phrases = [
+        "You've got this!",
+        "Push harder, you're stronger than you think.",
+        "Make every rep count!",
+        "Sweat now, shine later.",
+        "Challenge accepted!",
+        "Embrace the grind.",
+        "Today's effort, tomorrow's results.",
+        "Crush your goals!",
+        "Keep going, you're making progress.",
+        "No pain, no gain!",
+        "Be unstoppable.",
+        "You're a fighter!",
+        "Prove yourself right.",
+        "Focus on progress, not perfection.",
+        "Believe in yourself!",
+        "Stay determined.",
+        "Train insane or remain the same.",
+        "Don't quit, you're almost there.",
+        "Stronger with every session.",
+        "You are your only limit.",
+    ]
+    speak_text(f"Opening workout. {random.choice(motivational_phrases)}")
+    webbrowser.open_new_tab(page)
+
+
+def diary():
+    speak_text("Opening diary.")
+    webbrowser.open_new_tab(
+        "joplin://x-callback-url/openNote?id=43f449a2e8f7494199b59758f917e64f")
+
+
+def news():
+    speak_text("Opening news.")
+    webbrowser.open_new_tab("https://web.telegram.org/k/#@novinach")
+
+
+def food():
+    speak_text("Opening food page.")
+    webbrowser.open_new_tab(
+        "https://randomoutputs.com/random-recipe-generator?category=all")
+
+
+def shopping():
+    speak_text("Opening groceries page.")
+    webbrowser.open_new_tab(
+        "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
+
+
+def sleep():
+    speak_text("Good night, bro.")
+    ctypes.windll.user32.LockWorkStation()
+
+
+def letterbox():
+    speak_text("Opening watchlist.")
+    webbrowser.open_new_tab(
+        "https://letterboxd.com/seesmof/watchlist/by/shuffle/")
 
 
 # ! YEAR ONE TERM TWO
@@ -276,116 +337,3 @@ def class_сс_пр():
     webbrowser.open_new_tab(
         "https://meet.google.com/sor-axaz-zxk"
     )
-
-
-def mail():
-    speak_text("Opening mail.")
-    webbrowser.open_new_tab("https://mail.google.com/mail/u/0/#inbox")
-
-
-def stream():
-    speak_text("Opening Fedya's stream.")
-    webbrowser.open_new_tab("https://www.twitch.tv/pixelfedya")
-
-
-def workout():
-    motivational_phrases = [
-        "You've got this!",
-        "Push harder, you're stronger than you think.",
-        "Make every rep count!",
-        "Sweat now, shine later.",
-        "Challenge accepted!",
-        "Embrace the grind.",
-        "Today's effort, tomorrow's results.",
-        "Crush your goals!",
-        "Keep going, you're making progress.",
-        "No pain, no gain!",
-        "Be unstoppable.",
-        "You're a fighter!",
-        "Prove yourself right.",
-        "Focus on progress, not perfection.",
-        "Believe in yourself!",
-        "Stay determined.",
-        "Train insane or remain the same.",
-        "Don't quit, you're almost there.",
-        "Stronger with every session.",
-        "You are your only limit.",
-    ]
-    speak_text(f"Opening workout. {random.choice(motivational_phrases)}")
-    webbrowser.open_new_tab(
-        "joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e07511e6e")
-
-
-def diary():
-    speak_text("Opening diary.")
-    webbrowser.open_new_tab(
-        "joplin://x-callback-url/openNote?id=43f449a2e8f7494199b59758f917e64f")
-
-
-def news():
-    speak_text("Opening news.")
-    webbrowser.open_new_tab("https://news.google.com/home")
-
-
-def cards():
-    speak_text("Opening flashcards practice.")
-    webbrowser.open_new_tab("https://zorbi.app/decks")
-
-
-def keyboard():
-    speak_text("Opening Monkeytype.")
-    webbrowser.open_new_tab("https://monkeytype.com/")
-
-
-def tasks():
-    speak_text("Opening current due tasks.")
-    webbrowser.open_new_tab(
-        "https://calendar.google.com/calendar")
-
-
-def youtube():
-    speak_text("Opening YouTube, time to take a break.")
-    webbrowser.open_new_tab(
-        "https://www.youtube.com/")
-
-
-def quick():
-    speak_text("Opening quick notes.")
-    webbrowser.open_new_tab(
-        "joplin://x-callback-url/openNote?id=bda1807b38f948508b9086779c92859a")
-
-
-def food():
-    speak_text("Opening food page.")
-    webbrowser.open_new_tab(
-        "https://randomoutputs.com/random-recipe-generator?category=all")
-
-
-def article():
-    speak_text("Opening articles page.")
-    webbrowser.open_new_tab(
-        "https://longform.org/random")
-
-
-def github():
-    speak_text("Time to Code.")
-    webbrowser.open_new_tab(
-        "https://github.com/seesmof"
-    )
-
-
-def shopping():
-    speak_text("Opening groceries page.")
-    webbrowser.open_new_tab(
-        "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
-
-
-def sleep():
-    speak_text("Good night, bro.")
-    ctypes.windll.user32.LockWorkStation()
-
-
-def letterbox():
-    speak_text("Opening watchlist.")
-    webbrowser.open_new_tab(
-        "https://letterboxd.com/seesmof/watchlist/by/shuffle/")
