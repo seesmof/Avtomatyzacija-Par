@@ -15,19 +15,38 @@ today = date.today()
 
 # GREETINGS
 
-print("Greetings")
-print("Today is " + today.strftime("%d.%m.%Y"))
-print(weather)
+informal_greetings = [
+    "Greetings",
+    "Hey there",
+    "Hello!",
+    "Hiya",
+    "Hey!",
+    "What's up?",
+    "Yo!",
+    "Hi!",
+    "Hey!",
+    "Howdy",
+    "Hiya!",
+    "Hey, how's it going?",
+    "Hi there",
+    "Yo, what's crackin'?",
+    "Hey you!",
+    "Sup?",
+    "Hi hi!",
+    "Hey buddy",
+]
+
+speak_text(random.choice(informal_greetings))
+speak_text("Today is", today.strftime("%A"))
+speak_text(weather)
 this_week = ""
 if current_week % 2 == 0:
     this_week = "Знаменник"
-    print("This week is a Denominator!")
+    speak_text("This week is a Denominator!")
 else:
     this_week = "Чисельник"
-    print("This week is a Numerator!")
+    speak_text("This week is a Numerator!")
 
-print("Сьогодні ", today.strftime("%d.%m.%Y"),
-      today.strftime("%A"), this_week)
 t = time.localtime()
 
 # CLASSES
@@ -36,46 +55,49 @@ t = time.localtime()
 
 ''' OLD CLASSES BELOW, USE AS TEMPLATE 
 if today.strftime("%A") == "Monday" or today.strftime("%A") == "Tuesday" or today.strftime("%A") == "Wednesday" or today.strftime("%A") == "Thursday":
-    print("Today's classes:")
+    speak_text("Today's classes:")
 else:
-    print("No classes today!")
+    speak_text("No classes today!")
 if today.strftime("%A") == "Monday":
-    print("PE at " + time_one)
-    print("OOP Lecture at " + time_two)
-    print("OOP Lab at " + time_three)
-    print("ASM Lab at " + time_four)
+    speak_text("PE at " + time_one)
+    speak_text("OOP Lecture at " + time_two)
+    speak_text("OOP Lab at " + time_three)
+    speak_text("ASM Lab at " + time_four)
 elif today.strftime("%A") == "Tuesday":
-    print("English at " + time_two)
+    speak_text("English at " + time_two)
     if this_week == "Знаменник":
-        print("Discrete Maths Lecture at " + time_three)
+        speak_text("Discrete Maths Lecture at " + time_three)
     else:
-        print("Calculus Lecture at " + time_three)
+        speak_text("Calculus Lecture at " + time_three)
 elif today.strftime("%A") == "Wednesday":
     if this_week == "Знаменник":
-        print("Philosophy Practice at " + time_two)
-        print("ASM Lab at " + time_three)
+        speak_text("Philosophy Practice at " + time_two)
+        speak_text("ASM Lab at " + time_three)
     else:
-        print("SS Lab at " + time_two)
-        print("ASM Lecture at " + time_three)
+        speak_text("SS Lab at " + time_two)
+        speak_text("ASM Lecture at " + time_three)
 elif today.strftime("%A") == "Thursday":
-    print("Discrete Maths Lab at " + time_one)
-    print("PE at " + time_two)
+    speak_text("Discrete Maths Lab at " + time_one)
+    speak_text("PE at " + time_two)
     if this_week == "Знаменник":
-        print("Philosophy Lecture at " + time_three)
+        speak_text("Philosophy Lecture at " + time_three)
     else:
-        print("SS Lecture at " + time_three)
-    print("Calculus Lab at " + time_four)
-print("")
+        speak_text("SS Lecture at " + time_three)
+    speak_text("Calculus Lab at " + time_four)
+speak_text("")
 '''
 
 # AUTOMATION
 
-time.sleep(2)
-open_diary()
+time.sleep(1)
+diary()
 
-schedule.every().day.at("06:20").do(open_food)
-schedule.every().day.at("11:25").do(open_food)
-schedule.every().day.at("18:00").do(open_food)
+schedule.every().day.at("07:30").do(food)
+schedule.every().day.at("11:25").do(food)
+schedule.every().day.at("17:00").do(food)
+schedule.every().day.at("18:00").do(workout)
+schedule.every().day.at("20:00").do(food)
+schedule.every().day.at("21:30").do(sleep)
 
 while True:
     schedule.run_pending()
