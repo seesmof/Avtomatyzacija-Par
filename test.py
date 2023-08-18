@@ -1,7 +1,11 @@
-from library import *
+import requests
 
-schedule.every().day.at("19:12").do(workout, CARDIO_WORKOUT_LINK)
+url = 'https://www.deepl.com/en/translator?sl=auto&tl=en&q={text}'
+text = 'Hello, how are you?'
 
-while True:
-    schedule.run_pending()
-    time.sleep(3)
+translated_url = url.format(text=text)
+response = requests.post(translated_url)
+
+
+translated_text = response.text
+print(translated_text)
