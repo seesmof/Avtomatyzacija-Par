@@ -1,9 +1,7 @@
 import threading
-from gtts import gTTS
 import pyttsx4
 import sys
 import os
-from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
 import keyboard
 import random
 import schedule
@@ -18,12 +16,41 @@ import requests
 import json
 import ctypes
 import wmi
-from elevenlabs import generate, play, set_api_key
-set_api_key("0cd37791f7efe35f081355930b026d9c")
 engine = pyttsx4.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 CARDIO_WORKOUT_LINK = "https://youtu.be/ylxSQ_5WbMQ?t=50"
+informal_greetings = [
+    "Greetings",
+    "Hey there",
+    "Hello!",
+    "Hiya",
+    "Hey!",
+    "What's up?",
+    "Yo!",
+    "Hi!",
+    "Hey!",
+    "Howdy",
+    "Hiya!",
+    "Hey, how's it going?",
+    "Hi there",
+    "Yo, what's crackin'?",
+    "Hey you!",
+    "Sup?",
+    "Hi hi!",
+    "Hey buddy",
+]
+short_meal_wishes = [
+    "Enjoy your meal!",
+    "Bon appétit!",
+    "Happy eating!",
+    "Tasty bites ahead!",
+    "Delight in dining!",
+    "Savor every bite!",
+    "Have a great feast!",
+    "Flavorful moments!",
+    "Dig in and enjoy!"
+]
 
 
 def get_weather():
@@ -102,7 +129,7 @@ def news():
 
 
 def food():
-    speak_text("Opening food page.")
+    speak_text(f"Opening food page. {random.choice(short_meal_wishes)}")
     webbrowser.open_new_tab(
         "https://randomoutputs.com/random-recipe-generator?category=all")
 
