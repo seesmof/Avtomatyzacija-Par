@@ -65,15 +65,11 @@ news()
 time.sleep(3)
 mail()
 
-schedule.every().day.at("07:30").do(food)
-schedule.every().day.at("11:25").do(food)
 schedule.every().day.at("15:00").do(shopping)
-schedule.every().day.at("17:00").do(food)
 if dayName == "Tuesday" or dayName == "Thursday" or dayName == "Saturday":
     schedule.every().day.at("18:00").do(workout, CARDIO_WORKOUT_LINK)
 else:
     schedule.every().day.at("18:00").do(workout)
-schedule.every().day.at("19:00").do(food)
 schedule.every().day.at("20:00").do(close_window)
 schedule.every().day.at("21:30").do(sleep)
 
