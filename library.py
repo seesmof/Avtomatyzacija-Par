@@ -151,7 +151,7 @@ def food():
 def shopping():
     speak_text("Opening groceries page.")
     webbrowser.open_new_tab(
-        "joplin://x-callback-url/openFolder?id=0e1510f44afd4087a4d7ece3b342063a")
+        "joplin://x-callback-url/openFolder?id=be36f55c09584aeb8c15b57a44de172f")
 
 
 def sleep():
