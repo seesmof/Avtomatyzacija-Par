@@ -59,6 +59,7 @@ elif dayName == "Thursday":
     speak_text("Calculus Lab at " + time_four)
 '''
 
+clear_downloads_folder()
 time.sleep(1)
 speak_text("Don't forget to make a daily donate.")
 news()

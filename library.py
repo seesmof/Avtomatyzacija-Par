@@ -1,3 +1,4 @@
+import shutil
 import threading
 import pyttsx4
 import sys
@@ -74,6 +75,19 @@ def speak_text(*args):
     print(f"\n{input_text}\n")
     engine.say(input_text)
     engine.runAndWait()
+
+
+def clear_downloads_folder():
+    downloads_folder = os.path.expanduser("~/Downloads")
+
+    for item in os.listdir(downloads_folder):
+        item_path = os.path.join(downloads_folder, item)
+        if os.path.isfile(item_path):
+            os.remove(item_path)
+        elif os.path.isdir(item_path):
+            shutil.rmtree(item_path)
+
+    speak_text("Clearing downloads folder.")
 
 
 def close_window():
