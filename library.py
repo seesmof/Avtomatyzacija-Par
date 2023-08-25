@@ -1,3 +1,4 @@
+from suntime import Sun, SunTimeException
 import shutil
 import threading
 import pyttsx4
@@ -52,6 +53,20 @@ short_meal_wishes = [
     "Flavorful moments!",
     "Dig in and enjoy!"
 ]
+
+
+def get_sunset():
+    latitude = 47.838800
+    longitude = 35.139567
+    timezone = datetime.datetime.now()
+
+    sun = Sun(latitude, longitude)
+
+    try:
+        sunset_time = sun.get_local_sunset_time(timezone)
+        return sunset_time.strftime("%H:%M")
+    except SunTimeException as e:
+        print("Error:", e)
 
 
 def get_weather():
