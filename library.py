@@ -154,7 +154,8 @@ def diary():
 
 def news():
     speak_text("Opening news.")
-    webbrowser.open_new_tab("https://web.telegram.org/k/#@novinach")
+    webbrowser.open_new_tab(
+        "https://www.inoreader.com/feed/https%3A%2F%2Ft.me%2Fnovinach")
 
 
 def food():
@@ -166,7 +167,7 @@ def food():
 def shopping():
     speak_text("Opening groceries page.")
     webbrowser.open_new_tab(
-        "joplin://x-callback-url/openFolder?id=be36f55c09584aeb8c15b57a44de172f")
+        "obsidian://open?vault=obsidian-main-vault&file=shop%2F200%20Shopping%20Main%20Hub")
 
 
 def sleep():

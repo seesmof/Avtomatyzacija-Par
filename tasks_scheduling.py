@@ -67,13 +67,8 @@ time.sleep(3)
 mail()
 
 schedule.every().day.at("15:00").do(shopping)
-if dayName == "Tuesday" or dayName == "Thursday" or dayName == "Saturday":
-    schedule.every().day.at("18:00").do(workout, CARDIO_WORKOUT_LINK)
-else:
-    schedule.every().day.at("18:00").do(workout)
 sunsetTime = get_sunset()
 schedule.every().day.at(sunsetTime).do(close_window)
-schedule.every().day.at("21:30").do(sleep)
 
 while True:
     schedule.run_pending()
