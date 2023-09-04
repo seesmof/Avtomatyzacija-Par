@@ -21,10 +21,8 @@ speak_text(random.choice(informal_greetings))
 speak_text("Today is", dayName)
 speak_text(weather)
 clear_downloads_folder()
-time.sleep(1)
 speak_text("Don't forget to make a daily donate.")
 news()
-time.sleep(3)
 mail()
 
 weekNominationStatus = ""
@@ -42,31 +40,46 @@ else:
 
 if dayName == "Monday":
     speak_text(f"{AtaSD} Lecture at {classThreeTime}")
-    schedule.every().day.at(classThreeTime - 3).do(AtaSD_lecture)
+    schedule.every().day.at(classThreeTime).do(AtaSD_lecture)
     if weekNominationStatus == "Чисельник":
         speak_text(f"{TY} Practice at {classFourTime}")
-        schedule.every().day.at(classFourTime - 3).do(TY_practice)
+        schedule.every().day.at(classFourTime).do(TY_practice)
         speak_text(f"{SP} Lecture at {classFiveTime}")
-        schedule.every().day.at(classFiveTime - 3).do(SP_lecture)
+        schedule.every().day.at(classFiveTime).do(SP_lecture)
     else:
         speak_text(f"{SP} Lab at {classFourTime}")
-        schedule.every().day.at(classFourTime - 3).do(SP_practice)
+        schedule.every().day.at(classFourTime).do(SP_practice)
 elif dayName == "Tuesday":
     speak_text(f"{Web} Lab at {classOneTime}")
-    schedule.every().day.at(classOneTime - 3).do(Web_practice)
+    schedule.every().day.at(classOneTime).do(Web_practice)
     speak_text(f"{AtaSD} Lab at {classTwoTime}")
-    schedule.every().day.at(classTwoTime - 3).do(AtaSD_practice)
+    schedule.every().day.at(classTwoTime).do(AtaSD_practice)
     speak_text(f"{OPI} Lab at {classFourTime}")
-    schedule.every().day.at(classFourTime - 3).do(OPI_practice)
+    schedule.every().day.at(classFourTime).do(OPI_practice)
     if weekNominationStatus == "Знаменник":
         speak_text(f"{OPI} Practice at {classSixTime}")
-        schedule.every().day.at(classSixTime - 3).do(OPI_practice)
+        schedule.every().day.at(classSixTime).do(OPI_practice)
 elif dayName == "Wednesday":
-    print("Wednesday")
+    speak_text(f"{Web} Lecture at {classTwoTime}")
+    schedule.every().day.at(classTwoTime).do(Web_lecture)
+    if weekNominationStatus == "Чисельник":
+        speak_text(f"{TY} Lecture at {classOneTime}")
+        schedule.every().day.at(classOneTime).do(TY_lecture)
 elif dayName == "Thursday":
-    print("Thursday")
+    if weekNominationStatus == "Чисельник":
+        speak_text(f"{IY} Practice at {classFiveTime}")
+        schedule.every().day.at(classFiveTime).do(IY_practice)
+    else:
+        speak_text(f"{OPI} Lecture at {classTwoTime}")
+        schedule.every().day.at(classTwoTime).do(OPI_lecture)
+        speak_text(f"{IY} Lecture at {classFiveTime}")
+        schedule.every().day.at(classFiveTime).do(IY_lecture)
 elif dayName == "Friday":
-    print("Friday")
+    if weekNominationStatus == "Чисельник":
+        speak_text(f"{VM} Lecture at {classTwoTime}")
+        schedule.every().day.at(classTwoTime).do(VM_lecture)
+        speak_text(f"{VM} Practice at {classThreeTime}")
+        schedule.every().day.at(classThreeTime).do(VM_practice)
 
 
 sunsetTime = get_sunset()

@@ -68,3 +68,27 @@ def OPI_lecture():
     speak_text(f"Opening {OPI} Lecture.")
     webbrowser.open_new_tab(
         "https://us04web.zoom.us/j/71772651691?pwd=6pGOxUxsx7RKh0z8IOLcBbUdzf3X4p.1")
+
+
+def IY_practice():
+    speak_text(f"Opening {IY} Practice.")
+    webbrowser.open_new_tab(
+        "https://us05web.zoom.us/j/4549674435?pwd=MDlEaVIzL3pFWktxK2hVRlpvM3k1Zz09")
+
+
+def IY_lecture():
+    speak_text(f"Opening {IY} Lecture.")
+    webbrowser.open_new_tab(
+        "https://us04web.zoom.us/j/71772651691?pwd=6pGOxUxsx7RKh0z8IOLcBbUdzf3X4p.1")
+
+
+def VM_lecture():
+    speak_text(f"Opening {VM} Lecture.")
+    webbrowser.open_new_tab(
+        "https://us04web.zoom.us/j/71772651691?pwd=6pGOxUxsx7RKh0z8IOLcBbUdzf3X4p.1")
+
+
+def VM_practice():
+    speak_text(f"Opening {VM} Practice.")
+    webbrowser.open_new_tab(
+        "https://us05web.zoom.us/j/4549674435?pwd=MDlEaVIzL3pFWktxK2hVRlpvM3k1Zz09")
