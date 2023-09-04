@@ -13,25 +13,25 @@ VM = "Calculus"
 def AtaSD_lecture():
     speak_text(f"Opening {AtaSD} Lecture.")
     webbrowser.open_new_tab(
-        "https://classroom.google.com/c/NTQ1MTcwNjMzNDk4?cjc=nzfhv4b")
+        "https://us04web.zoom.us/j/79660602873?pwd=Dd2sGFxKZNePIGtiA32VhpzlmrfyKx.1")
 
 
 def AtaSD_practice():
     speak_text(f"Opening {AtaSD} Practice.")
     webbrowser.open_new_tab(
-        "meet.google.com/kwk-xiup-fvf")
+        "https://meet.google.com/kwk-xiup-fvf")
 
 
 def TY_lecture():
     speak_text(f"Opening {TY} Lecture.")
     webbrowser.open_new_tab(
-        "https://classroom.google.com/c/NTQ1MTcwNjMzNDk4?cjc=nzfhv4b")
+        "https://meet.google.com/arg-syjc-vcz")
 
 
 def TY_practice():
     speak_text(f"Opening {TY} Practice.")
     webbrowser.open_new_tab(
-        "meet.google.com/kwk-xiup-fvf")
+        "https://meet.google.com/arg-syjc-vcz")
 
 
 def SP_lecture():
