@@ -39,8 +39,8 @@ else:
     speak_text("No classes today!")
 
 if dayName == "Monday":
-    speak_text(f"{AtaSD} Lecture at {classThreeTime}")
-    schedule.every().day.at(classThreeTime).do(AtaSD_lecture)
+    speak_text(f"{ASD} Lecture at {classThreeTime}")
+    schedule.every().day.at(classThreeTime).do(ASD_lecture)
     if weekNominationStatus == "Чисельник":
         speak_text(f"{TY} Practice at {classFourTime}")
         schedule.every().day.at(classFourTime).do(TY_practice)
@@ -50,18 +50,18 @@ if dayName == "Monday":
         speak_text(f"{SP} Lab at {classFourTime}")
         schedule.every().day.at(classFourTime).do(SP_practice)
 elif dayName == "Tuesday":
-    speak_text(f"{Web} Lab at {classOneTime}")
-    schedule.every().day.at(classOneTime).do(Web_practice)
-    speak_text(f"{AtaSD} Lab at {classTwoTime}")
-    schedule.every().day.at(classTwoTime).do(AtaSD_practice)
+    speak_text(f"{WEB} Lab at {classOneTime}")
+    schedule.every().day.at(classOneTime).do(WEB_practice)
+    speak_text(f"{ASD} Lab at {classTwoTime}")
+    schedule.every().day.at(classTwoTime).do(ASD_practice)
     speak_text(f"{OPI} Lab at {classFourTime}")
     schedule.every().day.at(classFourTime).do(OPI_practice)
     if weekNominationStatus == "Знаменник":
         speak_text(f"{OPI} Practice at {classSixTime}")
         schedule.every().day.at(classSixTime).do(OPI_practice)
 elif dayName == "Wednesday":
-    speak_text(f"{Web} Lecture at {classTwoTime}")
-    schedule.every().day.at(classTwoTime).do(Web_lecture)
+    speak_text(f"{WEB} Lecture at {classTwoTime}")
+    schedule.every().day.at(classTwoTime).do(WEB_lecture)
     if weekNominationStatus == "Чисельник":
         speak_text(f"{TY} Lecture at {classOneTime}")
         schedule.every().day.at(classOneTime).do(TY_lecture)
