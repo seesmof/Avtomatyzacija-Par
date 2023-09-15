@@ -15,9 +15,12 @@ import time
 import gpt4free
 from gpt4free import Provider
 import requests
+import re
 import json
 import ctypes
 import wmi
+from todoist_api_python.api import TodoistAPI
+from deep_translator import GoogleTranslator
 engine = pyttsx4.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)

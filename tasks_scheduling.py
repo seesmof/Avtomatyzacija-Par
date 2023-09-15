@@ -83,9 +83,29 @@ elif dayName == "Friday":
         speak_text(f"{VM} Practice at {classThreeTime}")
         schedule.every().day.at(classThreeTime).do(VM_practice)
 
-
 sunsetTime = get_sunset()
 schedule.every().day.at(sunsetTime).do(close_window)
+
+
+def fetchAndReschedule():
+    api = TodoistAPI("e3b0b2ed0642281f8f775fc954ef1567ea84537c")
+    today = time.strftime("%Y-%m-%d")
+    tasks = api.get_tasks()
+    timeRegex = r"\d{2}:\d{2}"
+    tasksForToday = [
+        t for t in tasks if t.due is not None and t.due.date == today]
+
+    for task in tasksForToday:
+        dueTime = re.findall(timeRegex, task.due.string)
+        if dueTime:
+            # check for each class time first and then if its not a class, just schedule it for the due time
+            if task.content.startswith("ПР. ") or task.content.startswith("ЛБ. "):
+                schedule
+        else:
+            # if it has no due time then check for priorities and remind each certain time to just do it saying the task name
+
+
+schedule.every().hour.do(fetchAndReschedule)
 
 while True:
     schedule.run_pending()
