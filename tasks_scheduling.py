@@ -15,6 +15,19 @@ classFourTime = "13:25"
 classFiveTime = "14:55"
 classSixTime = "16:45"
 
+classOneTimeModified = (datetime.datetime.strptime(
+    classOneTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+classTwoTimeModified = (datetime.datetime.strptime(
+    classTwoTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+classThreeTimeModified = (datetime.datetime.strptime(
+    classThreeTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+classFourTimeModified = (datetime.datetime.strptime(
+    classFourTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+classFiveTimeModified = (datetime.datetime.strptime(
+    classFiveTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+classSixTimeModified = (datetime.datetime.strptime(
+    classSixTime, "%H:%M")-datetime.timedelta(minutes=3)).strftime("%H:%M")
+
 weather = f"Outside its {get_weather()} degrees"
 
 speak_text(random.choice(informal_greetings))
@@ -40,46 +53,46 @@ else:
 
 if dayName == "Monday":
     speak_text(f"{ASD} Lecture at {classThreeTime}")
-    schedule.every().day.at(classThreeTime).do(ASD_lecture)
+    schedule.every().day.at(classThreeTimeModified).do(ASD_lecture)
     if weekNominationStatus == "Чисельник":
         speak_text(f"{TY} Practice at {classFourTime}")
-        schedule.every().day.at(classFourTime).do(TY_practice)
+        schedule.every().day.at(classFourTimeModified).do(TY_practice)
         speak_text(f"{SP} Lecture at {classFiveTime}")
-        schedule.every().day.at(classFiveTime).do(SP_lecture)
+        schedule.every().day.at(classFiveTimeModified).do(SP_lecture)
     else:
         speak_text(f"{SP} Lab at {classFourTime}")
-        schedule.every().day.at(classFourTime).do(SP_practice)
+        schedule.every().day.at(classFourTimeModified).do(SP_practice)
 elif dayName == "Tuesday":
     speak_text(f"{WEB} Lab at {classOneTime}")
-    schedule.every().day.at(classOneTime).do(WEB_practice)
+    schedule.every().day.at(classOneTimeModified).do(WEB_practice)
     speak_text(f"{ASD} Lab at {classTwoTime}")
-    schedule.every().day.at(classTwoTime).do(ASD_practice)
+    schedule.every().day.at(classTwoTimeModified).do(ASD_practice)
     speak_text(f"{OPI} Lab at {classFiveTime}")
-    schedule.every().day.at(classFiveTime).do(OPI_practice)
+    schedule.every().day.at(classFiveTimeModified).do(OPI_practice)
     if weekNominationStatus == "Знаменник":
         speak_text(f"{OPI} Practice at {classSixTime}")
-        schedule.every().day.at(classSixTime).do(OPI_practice)
+        schedule.every().day.at(classSixTimeModified).do(OPI_practice)
 elif dayName == "Wednesday":
     speak_text(f"{WEB} Lecture at {classTwoTime}")
-    schedule.every().day.at(classTwoTime).do(WEB_lecture)
+    schedule.every().day.at(classTwoTimeModified).do(WEB_lecture)
     if weekNominationStatus == "Чисельник":
         speak_text(f"{TY} Lecture at {classOneTime}")
-        schedule.every().day.at(classOneTime).do(TY_lecture)
+        schedule.every().day.at(classOneTimeModified).do(TY_lecture)
 elif dayName == "Thursday":
     if weekNominationStatus == "Чисельник":
         speak_text(f"{IY} Practice at {classFiveTime}")
-        schedule.every().day.at(classFiveTime).do(IY_practice)
+        schedule.every().day.at(classFiveTimeModified).do(IY_practice)
     else:
         speak_text(f"{OPI} Lecture at {classTwoTime}")
-        schedule.every().day.at(classTwoTime).do(OPI_lecture)
+        schedule.every().day.at(classTwoTimeModified).do(OPI_lecture)
         speak_text(f"{IY} Lecture at {classFiveTime}")
-        schedule.every().day.at(classFiveTime).do(IY_lecture)
+        schedule.every().day.at(classFiveTimeModified).do(IY_lecture)
 elif dayName == "Friday":
     if weekNominationStatus == "Чисельник":
         speak_text(f"{VM} Lecture at {classTwoTime}")
-        schedule.every().day.at(classTwoTime).do(VM_lecture)
+        schedule.every().day.at(classTwoTimeModified).do(VM_lecture)
         speak_text(f"{VM} Practice at {classThreeTime}")
-        schedule.every().day.at(classThreeTime).do(VM_practice)
+        schedule.every().day.at(classThreeTimeModified).do(VM_practice)
 
 
 sunsetTime = get_sunset()
