@@ -94,15 +94,72 @@ def fetchAndReschedule():
     timeRegex = r"\d{2}:\d{2}"
     tasksForToday = [
         t for t in tasks if t.due is not None and t.due.date == today]
+    classContents = {
+        "ПР. ": {
+            "Алгоритми та Структури Даних": ASD_practice,
+            "Спортивне Програмування": SP_practice,
+            "Вебтехнології та Вебдизайн": WEB_practice,
+            "Основи Програмної Інженерії": OPI_practice,
+            "Історія України": IY_practice,
+            "Теорія Ймовірності": TY_practice,
+            "Спеціальні Розділи Вищої Математики": VM_practice
+        },
+        "ЛК. ": {
+            "Алгоритми та Структури Даних": ASD_lecture,
+            "Спортивне Програмування": SP_lecture,
+            "Вебтехнології та Вебдизайн": WEB_lecture,
+            "Основи Програмної Інженерії": OPI_lecture,
+            "Історія України": IY_lecture,
+            "Теорія Ймовірності": TY_lecture,
+            "Спеціальні Розділи Вищої Математики": VM_lecture
+        }
+    }
 
     for task in tasksForToday:
         dueTime = re.findall(timeRegex, task.due.string)
+        translatedTask = GoogleTranslator(
+            source='ukrainian', target='english').translate(task.content)
         if dueTime:
             # check for each class time first and then if its not a class, just schedule it for the due time
             if task.content.startswith("ПР. ") or task.content.startswith("ЛБ. "):
-                schedule
+                if "Алгоритми та Структури Даних" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(ASD_lecture)
+                elif "Спортивне Програмування" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(SP_lecture)
+                elif "Вебтехнології та Вебдизайн" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(WEB_lecture)
+                elif "Основи Програмної Інженерії" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(OPI_lecture)
+                elif "Історія України" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(IY_lecture)
+                elif "Теорія Ймовірності" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(TY_lecture)
+                elif "Спеціальні Розділи Вищої Математики" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(VM_lecture)
+            elif task.content.startswith("ЛК. "):
+                if "Алгоритми та Структури Даних" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(ASD_practice)
+                elif "Спортивне Програмування" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(SP_practice)
+                elif "Вебтехнології та Вебдизайн" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(WEB_practice)
+                elif "Основи Програмної Інженерії" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(OPI_practice)
+                elif "Історія України" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(IY_practice)
+                elif "Теорія Ймовірності" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(TY_practice)
+                elif "Спеціальні Розділи Вищої Математики" in task.content:
+                    schedule.every().day.at(dueTime[0]).do(VM_practice)
+            else:
+                schedule.every().day.at(dueTime[0]).do(
+                    speak_text, f"Time to do: {GoogleTranslator(source='ukrainian', target='english').translate(task.content)}")
         else:
             # if it has no due time then check for priorities and remind each certain time to just do it saying the task name
+            priorityLevels = {1: 4, 2: 3, 3: 2, 4: 1}
+            if task.priority in priorityLevels:
+                schedule.every(priorityLevels[task.priority]).hours.do(
+                    speak_text, f"Don't forget to do: {GoogleTranslator(source='ukrainian', target='english').translate(task.content)}")
 
 
 schedule.every().hour.do(fetchAndReschedule)

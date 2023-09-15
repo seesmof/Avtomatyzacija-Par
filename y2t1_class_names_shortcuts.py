@@ -111,3 +111,26 @@ def VM_practice():
     webbrowser.open_new_tab(
         "https://meet.google.com/neu-xwef-ivi")
     webbrowser.open_new_tab("obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%A1%D0%BF%D0%B5%D1%86%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%20%D0%A0%D0%BE%D0%B7%D0%B4%D1%96%D0%BB%D0%B8%20%D0%92%D0%B8%D1%89%D0%BE%D1%97%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8%2F121-5%20%D0%A1%D0%BF%D0%B5%D1%86%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%20%D0%A0%D0%BE%D0%B7%D0%B4%D1%96%D0%BB%D0%B8%20%D0%92%D0%B8%D1%89%D0%BE%D1%97%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8")
+
+
+# tasks examples
+
+# Task(
+#     is_completed=False,
+#     content='ЛК. Спеціальні Розділи Вищої Математики',
+#     description='',
+#     due=Due(date='2023-09-15', string='every other fri at 10:05'),
+#     priority=1
+# )
+
+# Task(
+#     is_completed=False,
+#     content='test priority 1',
+#     description='',
+#     due=Due(date='2023-09-15', string='15 Sep'),
+#     priority=4
+# )
+
+# full format. above is just the properties we really need
+
+# Task(assignee_id=None, assigner_id=None, comment_count=0, is_completed=False, content='ПР. Спеціальні Розділи Вищої Математики', created_at='2023-09-03T18:16:36.019003Z', creator_id='45513878', description='', due=Due(date='2023-09-15', is_recurring=True, string='every other fri at 11:55', datetime='2023-09-15T08:55:00Z', timezone='Europe/Kiev'), id='7194004149', labels=['GCal'], order=11, parent_id=None, priority=1, project_id='2318959463', section_id=None, url='https://todoist.com/showTask?id=7194004149', sync_id=None)
