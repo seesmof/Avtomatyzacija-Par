@@ -9,12 +9,12 @@ def fetchAndReschedule():
     today = time.strftime("%Y-%m-%d")
     tasks = api.get_tasks()
     timeRegex = r"\d{2}:\d{2}"
+    tasks = [t for t in tasks if t.due is not None and t.due.date == today]
 
     for task in tasks:
-        if task.due is not None and task.due.date == today:
-            dueTime = re.findall(timeRegex, task.due.string)
-            print(
-                f"\n{task.content} at {dueTime[0] if dueTime else 'any time'}\n")
+        dueTime = re.findall(timeRegex, task.due.string)
+        print(
+            f"\n{task.content} at {dueTime[0] if dueTime else 'any time'}\n")
 
 
 fetchAndReschedule()

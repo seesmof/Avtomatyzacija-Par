@@ -109,5 +109,5 @@ def VM_lecture():
 def VM_practice():
     speak_text(f"Opening {VM} Practice.")
     webbrowser.open_new_tab(
-        "https://us05web.zoom.us/j/4344130497?pwd=Z05oUnB4RDJGTGRWeEFaNlRsVDlBZz09")
+        "https://meet.google.com/neu-xwef-ivi")
     webbrowser.open_new_tab("obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%A1%D0%BF%D0%B5%D1%86%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%20%D0%A0%D0%BE%D0%B7%D0%B4%D1%96%D0%BB%D0%B8%20%D0%92%D0%B8%D1%89%D0%BE%D1%97%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8%2F121-5%20%D0%A1%D0%BF%D0%B5%D1%86%D1%96%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%20%D0%A0%D0%BE%D0%B7%D0%B4%D1%96%D0%BB%D0%B8%20%D0%92%D0%B8%D1%89%D0%BE%D1%97%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8")
