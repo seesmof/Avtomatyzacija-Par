@@ -54,8 +54,8 @@ elif dayName == "Tuesday":
     schedule.every().day.at(classOneTime).do(WEB_practice)
     speak_text(f"{ASD} Lab at {classTwoTime}")
     schedule.every().day.at(classTwoTime).do(ASD_practice)
-    speak_text(f"{OPI} Lab at {classFourTime}")
-    schedule.every().day.at(classFourTime).do(OPI_practice)
+    speak_text(f"{OPI} Lab at {classFiveTime}")
+    schedule.every().day.at(classFiveTime).do(OPI_practice)
     if weekNominationStatus == "Знаменник":
         speak_text(f"{OPI} Practice at {classSixTime}")
         schedule.every().day.at(classSixTime).do(OPI_practice)

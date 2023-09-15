@@ -1,10 +1,3 @@
-from library import *
+from y2t1_class_names_shortcuts import *
 
-classOneTime = "08:30"
-classTwoTime = "10:05"
-classThreeTime = "11:55"
-classFourTime = "13:25"
-classFiveTime = "14:55"
-classSixTime = "16:45"
-
-print(classSixTime - "00:02")
+webbrowser.open_new_tab("obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%20%D1%82%D0%B0%20%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%20%D0%94%D0%B0%D0%BD%D0%B8%D1%85%2F121-1%20%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%20%D1%82%D0%B0%20%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%20%D0%94%D0%B0%D0%BD%D0%B8%D1%85")
