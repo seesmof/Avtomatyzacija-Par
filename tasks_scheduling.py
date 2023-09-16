@@ -153,13 +153,13 @@ def fetchAndReschedule():
                     schedule.every().day.at(dueTime[0]).do(VM_practice)
             else:
                 schedule.every().day.at(dueTime[0]).do(
-                    speak_text, f"Time to do: {GoogleTranslator(source='ukrainian', target='english').translate(task.content)}")
+                    speak_text, f"Time to do: {translatedTask}")
         else:
             # if it has no due time then check for priorities and remind each certain time to just do it saying the task name
             priorityLevels = {1: 4, 2: 3, 3: 2, 4: 1}
             if task.priority in priorityLevels:
                 schedule.every(priorityLevels[task.priority]).hours.do(
-                    speak_text, f"Don't forget to do: {GoogleTranslator(source='ukrainian', target='english').translate(task.content)}")
+                    speak_text, f"Don't forget to do: {translatedTask}")
 
 
 schedule.every().hour.do(fetchAndReschedule)
