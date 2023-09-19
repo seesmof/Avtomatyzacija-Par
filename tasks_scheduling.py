@@ -51,8 +51,8 @@ elif dayName == "Tuesday":
     print(f"{OPI} Lab at {classFiveTime}")
     schedule.every().day.at(classFiveTime).do(OPI_practice)
     if weekNominationStatus == "Знаменник":
-        print(f"{OPI} Practice at {classSixTime}")
-        schedule.every().day.at(classSixTime).do(OPI_practice)
+        print(f"{OPI} Practice at {classFourTime}")
+        schedule.every().day.at(classFourTime).do(OPI_practice)
 elif dayName == "Wednesday":
     print(f"{WEB} Lecture at {classTwoTime}")
     schedule.every().day.at(classTwoTime).do(WEB_lecture)
