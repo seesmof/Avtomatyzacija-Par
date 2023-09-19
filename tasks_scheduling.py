@@ -18,8 +18,6 @@ classSixTime = "16:45"
 
 clear_downloads_folder()
 print("Don't forget to make a daily donate.")
-news()
-mail()
 
 weekNominationStatus = ""
 if current_week % 2 == 0:
