@@ -1,6 +1,9 @@
-schedule
+g4f
+suntime
 pyttsx4
-keyboard
-gpt4free
+schedule
 pyperclip
+requests
 wmi
+todoist-api-python
+deep-translator

@@ -4,7 +4,6 @@ import threading
 import pyttsx4
 import sys
 import os
-import keyboard
 import random
 import schedule
 import webbrowser
@@ -12,8 +11,6 @@ import pyperclip
 import datetime
 from datetime import date
 import time
-import gpt4free
-from gpt4free import Provider
 import requests
 import re
 import json
@@ -21,9 +18,10 @@ import ctypes
 import wmi
 from todoist_api_python.api import TodoistAPI
 from deep_translator import GoogleTranslator
+
 engine = pyttsx4.init()
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[1].id)
 CARDIO_WORKOUT_LINK = "https://youtu.be/ylxSQ_5WbMQ?t=50"
 informal_greetings = [
     "Greetings",
@@ -54,7 +52,7 @@ short_meal_wishes = [
     "Savor every bite!",
     "Have a great feast!",
     "Flavorful moments!",
-    "Dig in and enjoy!"
+    "Dig in and enjoy!",
 ]
 
 
@@ -80,12 +78,7 @@ def get_weather():
     response = requests.get(url)
     data = json.loads(response.text)
 
-    return int(data['main']['temp'])
-
-
-def generate_response(input_prompt):
-    response = gpt4free.Completion.create(Provider.You, prompt=input_prompt)
-    return response
+    return int(data["main"]["temp"])
 
 
 def speak_text(*args):
@@ -122,7 +115,9 @@ def tasks():
     webbrowser.open_new_tab("https://habitica.com/")
 
 
-def workout(page="joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e07511e6e"):
+def workout(
+    page="joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e07511e6e",
+):
     motivational_phrases = [
         "You've got this!",
         "Push harder, you're stronger than you think.",
@@ -152,25 +147,29 @@ def workout(page="joplin://x-callback-url/openFolder?id=7bc59968dcc94a5f8705ae8e
 def diary():
     speak_text("Opening diary.")
     webbrowser.open_new_tab(
-        "joplin://x-callback-url/openNote?id=43f449a2e8f7494199b59758f917e64f")
+        "joplin://x-callback-url/openNote?id=43f449a2e8f7494199b59758f917e64f"
+    )
 
 
 def news():
     speak_text("Opening news.")
     webbrowser.open_new_tab(
-        "https://www.inoreader.com/feed/https%3A%2F%2Ft.me%2Fnovinach")
+        "https://www.inoreader.com/feed/https%3A%2F%2Ft.me%2Fnovinach"
+    )
 
 
 def food():
     speak_text(f"Opening food page. {random.choice(short_meal_wishes)}")
     webbrowser.open_new_tab(
-        "https://randomoutputs.com/random-recipe-generator?category=all")
+        "https://randomoutputs.com/random-recipe-generator?category=all"
+    )
 
 
 def shopping():
     speak_text("Opening groceries page.")
     webbrowser.open_new_tab(
-        "obsidian://open?vault=obsidian-main-vault&file=shop%2F200%20Shopping%20Main%20Hub")
+        "obsidian://open?vault=obsidian-main-vault&file=shop%2F200%20Shopping%20Main%20Hub"
+    )
 
 
 def sleep():
@@ -180,5 +179,4 @@ def sleep():
 
 def letterbox():
     speak_text("Opening watchlist.")
-    webbrowser.open_new_tab(
-        "https://letterboxd.com/seesmof/watchlist/by/shuffle/")
+    webbrowser.open_new_tab("https://letterboxd.com/seesmof/watchlist/by/shuffle/")
