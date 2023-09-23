@@ -1,5 +1,5 @@
 from library import *
-from y2t1_class_names_shortcuts import *
+from year2term1classes import *
 
 current_time = datetime.datetime.now()
 current_hour = current_time.hour

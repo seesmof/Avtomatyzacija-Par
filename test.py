@@ -1,3 +1,4 @@
-import interpreter
+from library import *
 
-interpreter.chat()  # Starts an interactive chat
+dayName = date.today().strftime("%A")
+print(dayName)
