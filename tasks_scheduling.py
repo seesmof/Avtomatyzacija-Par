@@ -17,7 +17,7 @@ classFiveTime = "14:55"
 classSixTime = "16:45"
 
 clear_downloads_folder()
-speak_text("Don't forget to make a daily donate.")
+speak_text("124 UAH daily donate.")
 
 weekNominationStatus = ""
 if current_week % 2 == 0:
@@ -27,10 +27,10 @@ else:
     weekNominationStatus = "Чисельник"
     speak_text("This week is a Numerator.")
 
-if dayName != "Saturday" or dayName != "Sunday":
-    speak_text("Today's classes:")
-else:
+if dayName == "Saturday" or dayName == "Sunday":
     speak_text("No classes today!")
+else:
+    speak_text("Today's classes:")
 
 if dayName == "Monday":
     speak_text(f"{ASD} Lecture at {classThreeTime}")
