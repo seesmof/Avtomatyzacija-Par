@@ -8,6 +8,7 @@ import os
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
+wakeword = "you"
 
 def speak(audio):
     engine.say(audio)
@@ -23,8 +24,6 @@ def wishMe():
 
     else:
         speak("Good Evening!")  
-
-    speak("I am Jarvis Sir. Please tell me how may I help you")       
 
 def takeCommand():
     r = sr.Recognizer()
@@ -43,10 +42,76 @@ def takeCommand():
         return "None"
     return query
 
+import g4f
+from g4f.Provider import (
+    AItianhu,
+    Acytoo,
+    Aichat,
+    Ails,
+    Aivvm,
+    Bard,
+    Bing,
+    ChatBase,
+    ChatgptAi,
+    ChatgptLogin,
+    CodeLinkAva,
+    DeepAi,
+    H2o,
+    HuggingChat,
+    Opchatgpts,
+    OpenAssistant,
+    OpenaiChat,
+    Raycast,
+    Theb,
+    Vercel,
+    Vitalentum,
+    Wewordle,
+    Ylokh,
+    You,
+    Yqcloud,
+)
+providers=[
+    AItianhu,
+    Acytoo,
+    Aichat,
+    Ails,
+    Aivvm,
+    Bard,
+    Bing,
+    ChatBase,
+    ChatgptAi,
+    ChatgptLogin,
+    CodeLinkAva,
+    DeepAi,
+    H2o,
+    HuggingChat,
+    Opchatgpts,
+    OpenAssistant,
+    OpenaiChat,
+    Raycast,
+    Theb,
+    Vercel,
+    Vitalentum,
+    Wewordle,
+    Ylokh,
+    You,
+    Yqcloud,
+]
+
+def generateWithAI(q):
+    return g4f.ChatCompletion.create(model=g4f.models.default,messages=[{"role":"user","content":q}],provider=providers[2])
+
 def main():
     wishMe()
     while True:
         query = takeCommand().lower()
+
+        if wakeword in query:
+            query=query.replace(wakeword,"")
+            response=generateWithAI(query)
+            print(response)
+            speak(response)
+            
 
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
