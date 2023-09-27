@@ -5,25 +5,28 @@ import wikipedia
 import webbrowser
 import os
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id)
+engine = pyttsx3.init("sapi5")
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[0].id)
 wakeword = "you"
+
 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+
 def wishMe():
     hour = int(datetime.datetime.now().hour)
-    if hour>=0 and hour<12:
+    if hour >= 0 and hour < 12:
         speak("Good Morning!")
 
-    elif hour>=12 and hour<18:
-        speak("Good Afternoon!")   
+    elif hour >= 12 and hour < 18:
+        speak("Good Afternoon!")
 
     else:
-        speak("Good Evening!")  
+        speak("Good Evening!")
+
 
 def takeCommand():
     r = sr.Recognizer()
@@ -33,14 +36,15 @@ def takeCommand():
         audio = r.listen(source)
 
     try:
-        print("Recognizing...")    
-        query = r.recognize_google(audio, language='en-in')
+        print("Recognizing...")
+        query = r.recognize_google(audio, language="en-in")
         print(f"User said: {query}\n")
 
-    except Exception as e:    
-        print("Say that again please...")  
+    except Exception as e:
+        print("Say that again please...")
         return "None"
     return query
+
 
 import g4f
 from g4f.Provider import (
@@ -70,7 +74,8 @@ from g4f.Provider import (
     You,
     Yqcloud,
 )
-providers=[
+
+providers = [
     AItianhu,
     Acytoo,
     Aichat,
@@ -97,48 +102,56 @@ providers=[
     You,
     Yqcloud,
 ]
+
+
 def generateWithAI(q):
     global providers
     for provider in providers[:]:
         try:
-            return g4f.ChatCompletion.create(model=g4f.models.default,messages=[{"role":"user","content":q}],provider=provider)
+            return g4f.ChatCompletion.create(
+                model=g4f.models.default,
+                messages=[{"role": "user", "content": q}],
+                provider=provider,
+            )
         except Exception as e:
             providers.remove(provider)
     return None
+
+
 def main():
     wishMe()
     while True:
         query = takeCommand().lower()
 
         if wakeword in query:
-            query=query.replace(wakeword,"")
-            response=generateWithAI(query)
+            query = query.replace(wakeword, "")
+            response = generateWithAI(query)
             print(response)
             speak(response)
-            
 
-        if 'wikipedia' in query:
-            speak('Searching Wikipedia...')
+        if "wikipedia" in query:
+            speak("Searching Wikipedia...")
             query = query.replace("wikipedia", "")
             results = wikipedia.summary(query, sentences=2)
             speak("According to Wikipedia")
             print(results)
             speak(results)
 
-        elif 'open youtube' in query:
+        elif "open youtube" in query:
             webbrowser.open("youtube.com")
 
-        elif 'open google' in query:
+        elif "open google" in query:
             webbrowser.open("google.com")
 
-        elif 'play music' in query:
-            music_dir = 'D:\\Non Critical\\songs\\Favorite Songs2'
+        elif "play music" in query:
+            music_dir = "D:\\Non Critical\\songs\\Favorite Songs2"
             songs = os.listdir(music_dir)
             os.startfile(os.path.join(music_dir, songs[0]))
 
-        elif 'the time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")    
+        elif "the time" in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
+
 
 if __name__ == "__main__":
     main()
