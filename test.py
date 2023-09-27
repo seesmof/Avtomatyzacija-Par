@@ -97,10 +97,14 @@ providers=[
     You,
     Yqcloud,
 ]
-
 def generateWithAI(q):
-    return g4f.ChatCompletion.create(model=g4f.models.default,messages=[{"role":"user","content":q}],provider=providers[2])
-
+    global providers
+    for provider in providers[:]:
+        try:
+            return g4f.ChatCompletion.create(model=g4f.models.default,messages=[{"role":"user","content":q}],provider=provider)
+        except Exception as e:
+            providers.remove(provider)
+    return None
 def main():
     wishMe()
     while True:
