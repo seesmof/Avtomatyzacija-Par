@@ -96,7 +96,7 @@ def OPI_lecture():
 def IY_practice():
     speak_text(f"Opening {IY} Practice.")
     webbrowser.open_new_tab(
-        "https://us05web.zoom.us/j/82489844891?pwd=OEoN6gjEi8FjrKalsEhFGFiBQ73Oix.1"
+        "https://us05web.zoom.us/j/82941381946?pwd=fWODT5tAqYogAMAfDpkTQf6aWp1IRF.1"
     )
     webbrowser.open_new_tab(
         "obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F%2C%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D1%82%D0%B0%20%D1%96%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8%2F121-3%20%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F%2C%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D1%82%D0%B0%20%D1%96%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8"
@@ -106,7 +106,7 @@ def IY_practice():
 def IY_lecture():
     speak_text(f"Opening {IY} Lecture.")
     webbrowser.open_new_tab(
-        "https://us05web.zoom.us/j/82489844891?pwd=OEoN6gjEi8FjrKalsEhFGFiBQ73Oix.1"
+        "https://us05web.zoom.us/j/82941381946?pwd=fWODT5tAqYogAMAfDpkTQf6aWp1IRF.1"
     )
     webbrowser.open_new_tab(
         "obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F%2C%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D1%82%D0%B0%20%D1%96%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8%2F121-3%20%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F%2C%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D1%82%D0%B0%20%D1%96%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%87%D0%BD%D1%96%D1%81%D1%82%D1%8C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8"
