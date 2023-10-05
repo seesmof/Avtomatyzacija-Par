@@ -88,6 +88,7 @@ def OPI_practice():
 def OPI_lecture():
     speak_text(f"Opening {OPI} Lecture.")
     webbrowser.open_new_tab("https://us02web.zoom.us/j/71772651691")
+    pyperclip.copy("2023")
     webbrowser.open_new_tab(
         "obsidian://open?vault=obsidian-main-vault&file=university%2F2%20%D0%BA%D1%83%D1%80%D1%81%2F1%20%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%B8%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D1%97%20%D0%86%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D1%96%D1%97%2F121-4%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%B8%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D1%97%20%D0%86%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D1%96%D1%97"
     )
