@@ -67,6 +67,6 @@ This script was created for a specific class schedule and may not work correctly
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is [Public Domain](./LICENSE).
 
 <p align="right"><a href="#readme-top"><strong>Back to top</strong></a></p>
