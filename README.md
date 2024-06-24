@@ -1,72 +1,14 @@
-<a name="readme-top"></a>
+**but examine everything; hold firmly to that which is good,**
+– [1 Thessalonians 5:21 NASB](https://www.biblegateway.com/passage/?search=1+Thessalonians+5%3A21&version=NASB,KJV)
 
-<div align="center">
-<h1 align="center">Classes Automation</h1>
-</div>
+**For you yourselves know full well that the day of the Lord is coming just like a thief in the night.**
+– [1 Thessalonians 5:2 NASB](https://www.biblegateway.com/passage/?search=1+Thessalonians+5%3A2&version=NASB,KJV)
 
-## Table of contents
+**For the mind set on the flesh is death, but the mind set on the Spirit is life and peace, because the mind set on the flesh is hostile toward God; for it does not subject itself to the law of God, for it is not even able to do so, and those who are in the flesh cannot please God. However, you are not in the flesh but in the Spirit, if indeed the Spirit of God dwells in you. But if anyone does not have the Spirit of Christ, he does not belong to Him.**
+– [Romans 8:6-9 NASB](https://www.biblegateway.com/passage/?search=Romans+8%3A6-9&version=NASB,KJV)
 
-- [Table of contents](#table-of-contents)
-- [About](#about)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Schedule Information](#schedule-information)
-- [Note](#note)
-- [Built with](#built-with)
-- [License](#license)
+contains some python tools to help automate opening online classes ✝️💝
 
-## About
-
-This repository contains a simple Python script that is meant to automate online class attending. It runs classes on its own, as well as opens notes for them and a bunch more. Made with Python.
-
-## Installation
-
-This script requires Python 3 to run. You can download Python 3 [here](https://www.python.org/downloads/).
-
-Clone the repository:
-
-```bash
-git clone https://github.com/seesmof/gcalendar-automation.git
-```
-
-## Usage
-
-1.  Open the terminal or command prompt and navigate to the directory where the script is located.
-2.  Run the following command to install the required libraries:
-
-`pip install -r requirements.txt`
-
-3.  Run the script:
-
-`python main.py`
-
-## Schedule Information
-
-The script displays the class schedule for the current week, based on the current date. The schedule is displayed as follows:
-
-```arduino
-- <class name> - <class time>
-```
-
-The following class times are used:
-
-- `time_one` - 8:30
-- `time_two` - 10:05
-- `time_three` - 11:55
-- `time_four` - 13:25
-
-The links for the Zoom classes are opened automatically in your default browser.
-
-## Note
-
-This script was created for a specific class schedule and may not work correctly for other schedules. Please modify the script as needed for your own class schedule.
-
-## Built with
-
-![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-
-## License
-
-This project is [Public Domain](./LICENSE).
-
-<p align="right"><a href="#readme-top"><strong>Back to top</strong></a></p>
+###### installation instructions
+1. make sure you have [python](https://www.python.org/download/) installed
+2. start the `Run.vbs` script
