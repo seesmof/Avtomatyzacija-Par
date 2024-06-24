@@ -1,9 +1,0 @@
-g4f
-suntime
-pyttsx4
-schedule
-pyperclip
-requests
-wmi
-todoist-api-python
-deep-translator
