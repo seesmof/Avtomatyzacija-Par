@@ -9,6 +9,8 @@
 
 contains some python tools to help automate opening online classes ✝️💝
 
+TODO move to web and try to make it work there ✝️💝 please Daddy Jesus Christ our Holy Lord GOD Almigthy, if YOU Are willing, please help
+
 ###### installation instructions
 1. make sure you have [python](https://www.python.org/download/) installed
 2. start the `Run.vbs` script
