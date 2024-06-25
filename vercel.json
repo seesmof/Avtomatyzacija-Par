@@ -9,10 +9,6 @@
     {
       "src": "/api/(.*)",
       "dest": "api/run.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "interface/run.html"
     }
   ]
 }
