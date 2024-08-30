@@ -1,0 +1,3 @@
+todoist-api-python
+pyperclip
+schedule
