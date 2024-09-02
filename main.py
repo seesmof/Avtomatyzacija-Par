@@ -44,19 +44,11 @@ def schedule_classes(courses_info):
         uri = course_info[class_type]["uri"]
         pin = course_info[class_type].get("pin", "")
 
-        class_info = {
-            "name": class_name,
-            "type": class_type,
-            "time": class_time,
-            "uri": uri,
-            "pin": pin,
-        }
-
         class_hour, class_minute = class_time.split(":")
         class_minute = int(class_minute)-3
         class_time = f"{class_hour}:{class_minute:02d}"
 
-        schedule.every().day.at(class_time).do(open_class, class_info)
+        schedule.every().day.at(class_time).do(open_class, {"name": class_name,"type": class_type,"time": class_time,"uri": uri,"pin": pin})
         print(
             f"{class_name} {'Lecture' if class_type == 'L' else 'Practice'} at {class_time}"
         )
