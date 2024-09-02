@@ -4,17 +4,59 @@
       "uri": "https://us04web.zoom.us/j/7235437806?pwd=T2lHS2NaOWkxN1J0UFRaOUU3YWR2QT09",
       "pin": "3XzZDf"
     },
-    "P": { "uri": "", "pin": "" }
+    "P": {
+      "uri": "",
+      "pin": ""
+    }
   },
-  "AV": { "L": { "uri": "", "pin": "" }, "P": { "uri": "", "pin": "" } },
+  "AV": {
+    "L": {
+      "uri": "https://us02web.zoom.us/j/3667974509",
+      "pin": "781942"
+    },
+    "P": {
+      "uri": "https://us02web.zoom.us/j/86407187716",
+      "pin": "679599"
+    }
+  },
   "EM": {
     "L": {
       "uri": "https://us04web.zoom.us/j/4684321165?pwd=L1FCaXRRcHkveG5Fd3Y3eWZqTld5UT09",
       "pin": "0s4SX5"
     },
-    "P": { "uri": "https://us02web.zoom.us/j/84790878338", "pin": "2024" }
+    "P": {
+      "uri": "https://us02web.zoom.us/j/84790878338",
+      "pin": "2024"
+    }
   },
-  "GS": { "L": { "uri": "", "pin": "" }, "P": { "uri": "", "pin": "" } },
-  "PP": { "L": { "uri": "", "pin": "" }, "P": { "uri": "", "pin": "" } },
-  "RP": { "L": { "uri": "", "pin": "" }, "P": { "uri": "", "pin": "" } }
+  "GS": {
+    "L": {
+      "uri": "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09",
+      "pin": "8Wphxe"
+    },
+    "P": {
+      "uri": "https://us02web.zoom.us/j/9061742629",
+      "pin": "651173"
+    }
+  },
+  "PP": {
+    "L": {
+      "uri": "",
+      "pin": ""
+    },
+    "P": {
+      "uri": "",
+      "pin": ""
+    }
+  },
+  "RP": {
+    "L": {
+      "uri": "",
+      "pin": ""
+    },
+    "P": {
+      "uri": "",
+      "pin": ""
+    }
+  }
 }
