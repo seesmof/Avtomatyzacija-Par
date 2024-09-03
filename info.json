@@ -29,6 +29,26 @@
       "pin": "2024"
     }
   },
+  "WB": {
+    "L": {
+      "uri": "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09",
+      "pin": "8Wphxe"
+    },
+    "P": {
+      "uri": "https://us02web.zoom.us/j/5151534723",
+      "pin": "152334"
+    }
+  },
+  "FD": {
+    "L": {
+      "uri": "https://us02web.zoom.us/j/85449509141",
+      "pin": "785890"
+    },
+    "P": {
+      "uri": "https://meet.google.com/uyb-nxzx-aoj",
+      "pin": ""
+    }
+  },
   "GS": {
     "L": {
       "uri": "https://us04web.zoom.us/j/7594080934?pwd=RlBDYW9OMzNGeXkwQjBGQzNKNnF4QT09",
@@ -37,16 +57,6 @@
     "P": {
       "uri": "https://us02web.zoom.us/j/9061742629",
       "pin": "651173"
-    }
-  },
-  "PP": {
-    "L": {
-      "uri": "",
-      "pin": ""
-    },
-    "P": {
-      "uri": "",
-      "pin": ""
     }
   },
   "RP": {
