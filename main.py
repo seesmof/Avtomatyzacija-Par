@@ -23,8 +23,11 @@ def fetch_classes():
         with open(c.KEYS_PATH, "r", encoding="utf-8") as f:
             return f.read()
 
-    api_handler = TodoistAPI(read_api_key())
-    due_tasks = api_handler.get_tasks()
+    try:
+        api_handler = TodoistAPI(read_api_key())
+        due_tasks = api_handler.get_tasks()
+    except Exception:
+        print(f"Failed to fetch classes")
     classes_list = [
         task
         for task in due_tasks
