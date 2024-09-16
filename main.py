@@ -17,7 +17,6 @@ def open_class(class_data):
 
     note_name=f"{now.strftime("%d-%m-%Y")}_{class_name}-{class_type_string}"
     pyperclip.copy(f"{class_pin}\n{note_name}")
-
 def fetch_classes():
     def read_api_key():
         with open(c.KEYS_PATH, "r", encoding="utf-8") as f:
@@ -43,7 +42,9 @@ def schedule_classes(courses_info):
         task_full_name = current_class.content
         class_type, class_name = task_full_name.split(" ")
 
-        course_info = courses_info[class_name]
+        course_info = courses_info.get(class_name, {})
+        if not course_info:
+            continue
         uri = course_info[class_type]["uri"]
         pin = course_info[class_type].get("pin", "")
 
