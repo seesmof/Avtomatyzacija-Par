@@ -15,15 +15,6 @@ import schedule
 import json
 
 
-def vidkryty_paru(danni_pary):
-    nazva_pary, typ_pary, chas_pary, posylannja_pary, pin_pary = danni_pary.values()
-    nazva_typu_pary = "praktyku" if typ_pary == "P" else "lekciju"
-
-    print(f"Vidkryto {nazva_typu_pary} {nazva_pary} o {chas_pary}")
-    webbrowser.open(posylannja_pary)
-    pyperclip.copy(pin_pary)
-
-
 def vantazhyty_pary():
     def prochytaty_kljuch():
         with open(Zminni.FAJL_TOKENU, "r", encoding="utf-8") as f:
@@ -52,34 +43,36 @@ def vantazhyty_pary():
     return spysok_par
 
 
-def schedule_classes(courses_info):
-    for current_class in courses_info:
-        class_time = current_class.due.string.split(" ")[-1]
-        task_full_name = current_class.content
-        class_type, class_name = task_full_name.split(" ")
+def zaplanuvaty_pary():
+    def vidkryty_paru(danni_pary):
+        nazva_pary, typ_pary, chas_pary, posylannja_pary, pin_pary = danni_pary
+        nazva_typu_pary = "praktyku" if typ_pary == "P" else "lekciju"
 
-        course_info = courses_info.get(class_name, {})
-        if not course_info:
+        print(f"Vidkryto {nazva_typu_pary} {nazva_pary} o {chas_pary}")
+        webbrowser.open(posylannja_pary)
+        pyperclip.copy(pin_pary)
+
+    for para in pary:
+        chas_pary = para.due.string.split(" ")[-1]
+        nazva_pary = para.content
+        typ_pary, nazva_kursu = nazva_pary.split(" ")
+
+        danni_kursu = danni_kursiv.get(nazva_kursu, {})
+        if not danni_kursu:
             continue
-        uri = course_info[class_type]["uri"]
-        pin = course_info[class_type].get("pin", "")
+        uri = danni_kursu[typ_pary]["uri"]
+        pin = danni_kursu[typ_pary].get("pin", "")
 
-        class_hour, class_minute = class_time.split(":")
-        class_minute = int(class_minute) - 3
-        class_time = f"{class_hour}:{class_minute:02d}"
+        hodyna, hvylyna = chas_pary.split(":")
+        hvylyna = int(hvylyna) - 3
+        zavchas_pary = f"{hodyna}:{hvylyna:02d}"
 
-        schedule.every().day.at(class_time).do(
+        schedule.every().day.at(zavchas_pary).do(
             vidkryty_paru,
-            {
-                "name": class_name,
-                "type": class_type,
-                "time": class_time,
-                "uri": uri,
-                "pin": pin,
-            },
+            (nazva_kursu, typ_pary, chas_pary, uri, pin),
         )
         print(
-            f"{class_name} {'Lecture' if class_type == 'L' else 'Practice'} at {class_time}"
+            f"{'Lekcija' if typ_pary == 'L' else 'Prakrtyka'} {nazva_kursu} o {chas_pary}"
         )
 
 
@@ -92,7 +85,7 @@ if not pary:
 
 with open(Zminni.FAJL_POSYLANNJA, "r", encoding="utf-8") as f:
     danni_kursiv = json.load(f)
-schedule_classes(danni_kursiv)
+zaplanuvaty_pary()
 
 while 1:
     schedule.run_pending()
