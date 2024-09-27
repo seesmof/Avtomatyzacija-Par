@@ -1,3 +1,11 @@
+class Zminni:
+    import os
+
+    POTOCHNA_TEKA = os.path.dirname(os.path.abspath(__file__))
+    FAJL_TOKENU = os.path.join(POTOCHNA_TEKA, "kljuchi.txt")
+    FAJL_POSYLANNJA = os.path.join(POTOCHNA_TEKA, "posylannja.json")
+
+
 from todoist_api_python.api import TodoistAPI
 from datetime import datetime
 from time import sleep
@@ -6,38 +14,46 @@ import pyperclip
 import schedule
 import json
 
-from konstanty import Zminni as z
 
-def open_class(class_data):
-    class_name, class_type, class_time, class_uri, class_pin = class_data.values()
-    class_type_string = "Practice" if class_type == "P" else "Lecture"
+def vidkryty_paru(danni_pary):
+    nazva_pary, typ_pary, chas_pary, posylannja_pary, pin_pary = danni_pary.values()
+    nazva_typu_pary = "praktyku" if typ_pary == "P" else "lekciju"
 
-    print(f"Opening {class_name} {class_type_string} on {class_time}")
-    webbrowser.open(class_uri)
+    print(f"Vidkryto {nazva_typu_pary} {nazva_pary} o {chas_pary}")
+    webbrowser.open(posylannja_pary)
+    pyperclip.copy(pin_pary)
 
-    note_name=f"{now.strftime("%d-%m-%Y")}_{class_name}-{class_type_string}"
-    pyperclip.copy(f"{class_pin}\n{note_name}")
-def fetch_classes():
-    def read_api_key():
-        with open(c.KEYS_PATH, "r", encoding="utf-8") as f:
+
+def vantazhyty_pary():
+    def prochytaty_kljuch():
+        with open(Zminni.FAJL_TOKENU, "r", encoding="utf-8") as f:
             return f.read()
 
     try:
-        api_handler = TodoistAPI(read_api_key())
-        due_tasks = api_handler.get_tasks()
+        object_api = TodoistAPI(prochytaty_kljuch())
+        zavdannja = object_api.get_tasks()
     except Exception:
-        print(f"Failed to fetch classes")
-    classes_list = [
-        task
-        for task in due_tasks
-        if task.due
-        and task.due.date == now.strftime("%Y-%m-%d")
-        and task.project_id == c.TARGET_PROJECT_ID
+        print("Shchos' pishlo ne tak")
+    spysok_par = [
+        z
+        # Beremo kozhnu paru
+        for z in zavdannja
+        # Ce shchob vono znajshlo pary
+        if z.due
+        # Na sjogodni
+        and z.due.date == zaraz.strftime("%Y-%m-%d")
+        # Jakshcho dovzhyna nazvy 4 symvoly
+        and len(z.content) == 4
+        # I jakshcho je probil u nazvi
+        and " " in z.content
+        # I jakshcho je L abo P u nazvi pary
+        and ("L" or "P") in z.content
     ]
-    return classes_list
+    return spysok_par
+
 
 def schedule_classes(courses_info):
-    for current_class in classes:
+    for current_class in courses_info:
         class_time = current_class.due.string.split(" ")[-1]
         task_full_name = current_class.content
         class_type, class_name = task_full_name.split(" ")
@@ -49,25 +65,34 @@ def schedule_classes(courses_info):
         pin = course_info[class_type].get("pin", "")
 
         class_hour, class_minute = class_time.split(":")
-        class_minute = int(class_minute)-3
+        class_minute = int(class_minute) - 3
         class_time = f"{class_hour}:{class_minute:02d}"
 
-        schedule.every().day.at(class_time).do(open_class, {"name": class_name,"type": class_type,"time": class_time,"uri": uri,"pin": pin})
+        schedule.every().day.at(class_time).do(
+            vidkryty_paru,
+            {
+                "name": class_name,
+                "type": class_type,
+                "time": class_time,
+                "uri": uri,
+                "pin": pin,
+            },
+        )
         print(
             f"{class_name} {'Lecture' if class_type == 'L' else 'Practice'} at {class_time}"
         )
 
 
-now = datetime.now()
-classes=fetch_classes()
-if not classes:
-    print("No classes today")
+zaraz = datetime.now()
+pary = vantazhyty_pary()
+if not pary:
+    print("Nema par")
     sleep(3)
     exit()
 
-with open(c.INFO_PATH, "r", encoding="utf-8") as f:
-    courses_info = json.load(f)
-schedule_classes(courses_info)
+with open(Zminni.FAJL_POSYLANNJA, "r", encoding="utf-8") as f:
+    danni_kursiv = json.load(f)
+schedule_classes(danni_kursiv)
 
 while 1:
     schedule.run_pending()
