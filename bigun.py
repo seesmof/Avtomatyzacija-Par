@@ -89,4 +89,4 @@ zaplanuvaty_pary()
 
 while 1:
     schedule.run_pending()
-    sleep(3)
+    sleep(40)
