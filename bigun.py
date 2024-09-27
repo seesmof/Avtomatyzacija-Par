@@ -6,7 +6,7 @@ import pyperclip
 import schedule
 import json
 
-from const import Const as c
+from konstanty import Zminni as z
 
 def open_class(class_data):
     class_name, class_type, class_time, class_uri, class_pin = class_data.values()
