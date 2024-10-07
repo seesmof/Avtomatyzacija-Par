@@ -1,1 +1,3 @@
 todoist-api-python
+schedule
+pyperclip
