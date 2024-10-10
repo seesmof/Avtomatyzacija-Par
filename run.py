@@ -21,7 +21,9 @@ def get_classes_data():
         return json.load(f)
 
 def schedule_classes():
-    for t in fetch_classes():
+    classes=fetch_classes()
+    if not classes: exit()
+    for t in classes:
         class_type,class_name=t.content.split()
         class_time=t.due.string.split()[-1]
         print(f"{'Lekcija' if class_type=='L' else 'Praktyka'} {class_name} o {class_time}")
