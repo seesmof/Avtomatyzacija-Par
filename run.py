@@ -5,7 +5,7 @@ import os
 
 def fetch_classes(): return [t for t in TodoistAPI("e3b0b2ed0642281f8f775fc954ef1567ea84537c").get_tasks() if t.due and t.due.date==time.strftime("%Y-%m-%d") and len(t.content)==4 and " " in t.content and ("P" in t.content or "L" in t.content)]
 
-def get_preponed_time(class_time:str): return f"{class_time.split(":")[0]}:{int(class_time.split(":")[-1])-3}"
+def get_preponed_time(class_time:str): return f"{class_time.split(":")[0]}:{int(class_time.split(":")[-1])-3:02d}"
 
 def open_class(class_data):
     import pyperclip
