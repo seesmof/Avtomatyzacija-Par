@@ -48,6 +48,7 @@ def schedule_classes():
         schedule.every().day.at(preponed_time).do(open_class, (class_type,class_name))
 
 schedule_classes()
+schedule.every(3).hours.do(schedule_classes)
 while 1:
     schedule.run_pending()
     time.sleep(40)
