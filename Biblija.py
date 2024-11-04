@@ -13,8 +13,8 @@ class Task:
         self,
         content:str,
         due:str=None,
+        parent_id:int=None,
         project_id:int=target_project,
-        parent_id:int=None
     ):
         self.content=content
         self.due=due
@@ -31,4 +31,9 @@ else:
     parent_id=check_tasks[0].id
 
 day_details="Luke 24, Exodus 18, Proverbs 5".split(", ")
-print(parent_id)
+for sub_task in day_details:
+    details=Task(sub_task,parent_id=parent_id)
+    new_sub_task=todoist_api.add_task(
+        content=details.content,project_id=details.project_id,parent_id=details.parent_id
+    )
+    print(new_sub_task.id)
