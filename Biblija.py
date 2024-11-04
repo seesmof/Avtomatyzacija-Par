@@ -34,14 +34,8 @@ def safely_add_task(task_name:str,task_details:Task):
         target_task=check_for_task[0]
     return target_task
 
-if not check_tasks:
-    details=Task("Day 67","today")
-    new_task=todoist_api.add_task(
-        content=details.content,due_string=details.due,project_id=details.project_id
-    )
-    parent_id=new_task.id
-else:
-    parent_id=check_tasks[0].id
+day_task=safely_add_task(f'Day {day_number}',Task("Day 67","today"))
+parent_id=day_task.id
 
 day_details="Luke 24, Exodus 18, Proverbs 5".split(", ")
 for sub_task in day_details:
