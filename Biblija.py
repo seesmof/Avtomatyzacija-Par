@@ -1,3 +1,4 @@
+import os
 from const import todoist_api,tiny_abbreviations
 
 all_tasks = todoist_api.get_tasks()
@@ -37,6 +38,11 @@ def safely_add_task(
 
 def form_reading_link(Book:int,chapter:int): 
     return f"https://ebible.org/study/?w1=bible&t1=local%3Aukr1871&v1={tiny_abbreviations[Book]}{chapter}"
+
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"readings_cache.txt")) as f:
+    data=[l.strip() for l in f.readlines()]
+    day,lists=data[0],data[1:]
+    print(day)
 
 day_number = 67
 day_task = safely_add_task(f"Day {day_number}", Task("Day 67", "today"))
