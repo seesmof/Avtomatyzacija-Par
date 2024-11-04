@@ -40,5 +40,5 @@ parent_id=day_task.id
 day_details="Luke 24, Exodus 18, Proverbs 5".split(", ")
 for sub_task in day_details:
     print(sub_task)
-    new_sub_task=safely_add_task(sub_task,Task(sub_task,parent_id=parent_id))
+    new_sub_task=safely_add_task(sub_task,Task(sub_task,parent_id=parent_id),[t for t in all_tasks if t.parent_id==parent_id])
     print(new_sub_task.id)
