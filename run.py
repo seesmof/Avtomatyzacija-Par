@@ -5,9 +5,12 @@ import schedule
 import pyperclip
 from todoist_api_python.api import TodoistAPI
 
+TODOIST_API_KEY="e3b0b2ed0642281f8f775fc954ef1567ea84537c"
+todoist_api=TodoistAPI(TODOIST_API_KEY)
+
 def form_classes_list(): 
     return [
-        t for t in TodoistAPI("e3b0b2ed0642281f8f775fc954ef1567ea84537c").get_tasks() 
+        t for t in todoist_api.get_tasks() 
         if t.due 
         and t.due.date==time.strftime("%Y-%m-%d") 
         and len(t.content)==4 
@@ -47,8 +50,9 @@ def schedule_classes():
         preponed_time=get_preponed_time(class_time)
         schedule.every().day.at(preponed_time).do(open_class, (class_type,class_name))
 
-schedule_classes()
-schedule.every(3).hours.do(schedule_classes)
-while 1:
-    schedule.run_pending()
-    time.sleep(40)
+if __name__=="__main__":
+    schedule_classes()
+    schedule.every(3).hours.do(schedule_classes)
+    while 1:
+        schedule.run_pending()
+        time.sleep(40)
