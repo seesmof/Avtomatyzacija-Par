@@ -43,9 +43,9 @@ day_task = safely_add_task(f"Day {day_number}", Task("Day 67", "today"))
 parent_id = day_task.id
 
 day_details = "Luke 24, Exodus 18, Proverbs 5".split(", ")
-for index,list_name in enumerate(day_details,start=1):
+for list_number,list_name in enumerate(day_details):
     new_sub_task = safely_add_task(
         list_name,
-        Task(f'**{index}** {list_name}', parent=parent_id),
+        Task(f'**{list_number+1}** {list_name}', parent=parent_id),
         [t for t in all_tasks if t.parent_id == parent_id],
     )
