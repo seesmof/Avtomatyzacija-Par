@@ -9,13 +9,13 @@ class Task:
             self,
             content: str,
             due: str = None,
-            parent_id: int = None,
-            project_id: str = str(2342885371),
+            parent: int = None,
+            project: str = str(2342885371),
     ):
         self.content = content
         self.due = due
-        self.project_id = project_id
-        self.parent_id = parent_id
+        self.project_id = project
+        self.parent_id = parent
 
 
 def safely_add_task(task_name: str,
@@ -43,7 +43,7 @@ for sub_task in day_details:
     print(sub_task)
     new_sub_task = safely_add_task(
         sub_task,
-        Task(sub_task, parent_id=parent_id),
+        Task(sub_task, parent=parent_id),
         [t for t in all_tasks if t.parent_id == parent_id],
     )
     print(new_sub_task.id)
