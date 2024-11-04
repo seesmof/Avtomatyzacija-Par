@@ -21,6 +21,19 @@ class Task:
         self.project_id=project_id
         self.parent_id=parent_id
 
+def safely_add_task(task_name:str,task_details:Task):
+    check_for_task=[t for t in Bible_tasks if task_name in t.content]
+    if not check_for_task:
+        target_task=todoist_api.add_task(
+            content=task_details.content,
+            due_string=task_details.due,
+            project_id=task_details.project_id,
+            parent_id=task_details.parent_id
+        )
+    else:
+        target_task=check_for_task[0]
+    return target_task
+
 if not check_tasks:
     details=Task("Day 67","today")
     new_task=todoist_api.add_task(
