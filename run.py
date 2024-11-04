@@ -6,11 +6,9 @@ import pyperclip
 
 from const import todoist_api
 
-
 def form_classes_list():
     return [
-        t
-        for t in todoist_api.get_tasks()
+        t for t in todoist_api.get_tasks()
         if t.due
         and t.due.date == time.strftime("%Y-%m-%d")
         and len(t.content) == 4
@@ -18,12 +16,10 @@ def form_classes_list():
         and ("P" in t.content or "L" in t.content)
     ]
 
-
 def get_preponed_time(class_time: str):
     hours, minutes = class_time.split(":")
     hours, minutes = int(hours), int(minutes) - 3
     return f"{hours}:{minutes:02d}"
-
 
 def load_classes_data():
     with open(
@@ -31,7 +27,6 @@ def load_classes_data():
         encoding="utf-8",
     ) as f:
         return json.load(f)
-
 
 def open_class(class_data: tuple):
     class_type, class_name = class_data
@@ -41,7 +36,6 @@ def open_class(class_data: tuple):
     os.system(f'start "" {class_link}')
     # Copy class password if any
     pyperclip.copy(class_pin) if class_pin else None
-
 
 def schedule_classes():
     classes_list = form_classes_list()
@@ -56,7 +50,6 @@ def schedule_classes():
         print(f"{full_class_type} {class_name} o {class_time}")
         preponed_time = get_preponed_time(class_time)
         schedule.every().day.at(preponed_time).do(open_class, (class_type, class_name))
-
 
 if __name__ == "__main__":
     schedule_classes()
