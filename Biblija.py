@@ -4,12 +4,13 @@ all_tasks = todoist_api.get_tasks()
 
 
 class Task:
+
     def __init__(
-        self,
-        content: str,
-        due: str = None,
-        parent_id: int = None,
-        project_id: str = str(2342885371),
+            self,
+            content: str,
+            due: str = None,
+            parent_id: int = None,
+            project_id: str = str(2342885371),
     ):
         self.content = content
         self.due = due
@@ -17,7 +18,9 @@ class Task:
         self.parent_id = parent_id
 
 
-def safely_add_task(task_name: str, task_details: Task, search_tasks: list = all_tasks):
+def safely_add_task(task_name: str,
+                    task_details: Task,
+                    search_tasks: list = all_tasks):
     check_for_task = [t for t in search_tasks if task_name in t.content]
     if not check_for_task:
         target_task = todoist_api.add_task(
