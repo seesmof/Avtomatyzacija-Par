@@ -38,11 +38,11 @@ def safely_add_task(
 def form_reading_link(Book:int,chapter:int): 
     return f"https://ebible.org/study/?w1=bible&t1=local%3Aukr1871&v1={tiny_abbreviations[Book]}{chapter}"
 
+"""
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"readings_cache.txt")) as f:
     data=[l.strip() for l in f.readlines()]
     day,lists=data[0],data[1:]
 
-""" 
 day_number = 67
 day_task = safely_add_task(f"Day {day_number}", Task("Day 67", "today"))
 parent_id = day_task.id
@@ -56,21 +56,31 @@ for list_number,list_name in enumerate(day_details):
     )
 """
 
-target_day=68
-current_day=0
-selected_list=Book_lists[4]
-Book_number=0
-chapter_number=0
-selected_Book=selected_list[Book_number]
-while current_day != target_day:
-    current_day+=1
-    if chapter_number<chapter_counts[selected_Book]: chapter_number+=1
+td=68
+cd=0
+lists=[
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+(0,0),
+]
+bn=0
+cn=0
+sl=Book_lists[3]
+sb=sl[bn]
+while cd!=td:
+    cd+=1
+    if cn<chapter_counts[sb]:cn+=1
     else:
-        if Book_number<len(selected_list)-1: Book_number+=1
-        else:
-            Book_number=0
-        chapter_number=1
-    selected_Book=selected_list[Book_number]
-    if current_day==target_day:
-        print(Book_names_en[selected_Book],chapter_number)
-        exit()
+        bn=bn+1 if bn<len(sl)-1 else 0
+        cn=1
+    sb=sl[bn]
+
+    if cd==td:
+        print(Book_names_ua[sb],cn)
