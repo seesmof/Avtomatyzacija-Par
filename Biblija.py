@@ -37,7 +37,8 @@ def safely_add_task(
 def form_reading_link(Book:int,chapter:int): 
     return f"https://ebible.org/study/?w1=bible&t1=local%3Aukr1871&v1={tiny_abbreviations[Book]}{chapter}"
 
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"readings_cache.txt")) as f:
+day_cache_path=os.path.join(os.path.dirname(os.path.abspath(__file__)),"readings_cache.txt")
+with open(day_cache_path,encoding='utf-8',mode='r') as f:
     target_day=int(f.read())
 
 subtask_details=[]
@@ -69,3 +70,7 @@ for list_index,list_data in enumerate(subtask_details):
         Task(f'[{reading_details}]({reading_link})',parent=parent_id),
         [t for t in all_tasks if t.parent_id==parent_id]
     )
+
+target_day+=1
+with open(day_cache_path,encoding='utf-8',mode='w') as f:
+    f.write(str(target_day))
