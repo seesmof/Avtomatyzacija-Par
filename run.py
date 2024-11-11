@@ -16,15 +16,11 @@ def form_classes_list():
         and ("P" in t.content or "L" in t.content)
     ]
 
-def get_preponed_time(class_time: str):
-    hours, minutes = class_time.split(":")
-    hours, minutes = int(hours), int(minutes) - 3
-    return f"{hours}:{minutes:02d}"
-
 def load_classes_data():
     with open(
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json"),
         encoding="utf-8",
+        mode='r'
     ) as f:
         return json.load(f)
 
@@ -48,8 +44,7 @@ def schedule_classes():
         class_time = class_data.due.string.split()[-1]
         full_class_type = "Lekcija" if class_type == "L" else "Praktyka"
         print(f"{full_class_type} {class_name} o {class_time}")
-        preponed_time = get_preponed_time(class_time)
-        schedule.every().day.at(preponed_time).do(open_class, (class_type, class_name))
+        schedule.every().day.at(f'{class_time.split(':')[0]}:{int(class_time.split(':')[1])-3}').do(open_class, (class_type, class_name))
 
 if __name__ == "__main__":
     schedule_classes()
