@@ -44,7 +44,7 @@ def schedule_classes():
         class_time = class_data.due.string.split()[-1]
         full_class_type = "Lekcija" if class_type == "L" else "Praktyka"
         print(f"{full_class_type} {class_name} o {class_time}")
-        schedule.every().day.at(f'{class_time.split(':')[0]}:{int(class_time.split(':')[1])-3}').do(open_class, (class_type, class_name))
+        schedule.every().day.at(class_time).do(open_class, (class_type, class_name))
 
 if __name__ == "__main__":
     schedule_classes()
