@@ -45,7 +45,8 @@ def open_class(class_data: tuple):
         '''
         return (datetime.datetime.now() + datetime.timedelta(minutes=m)).strftime('%H:%M')
 
-    schedule.every().day.at(get_time(80)).do(recorder.stop_record)
+    t=get_time(80)
+    schedule.every().day.at(t).do(recorder.stop_record)
 
 def schedule_classes():
     classes_list = form_classes_list()
