@@ -1,28 +1,52 @@
 import os
-import json
 import time
 import schedule
 import pyperclip
+from dataclasses import dataclass
+from collections import deque
+from todoist_api_python.api import TodoistAPI
 
-from const import todoist_api
+todoist_key = "e3b0b2ed0642281f8f775fc954ef1567ea84537c"
+todoist_api = TodoistAPI(todoist_key)
+root=os.path.dirname(os.path.abspath(__file__))
 
-def form_classes_list():
+@dataclass
+class Meeting:
+    link: str
+    code: str = ""
+    lecture: bool = True
+
+def copy_text(text: str):
+    command = f'echo {text.strip()}| clip'
+    os.system(command)
+
+q=deque()
+'''
+add classes to google calendar, schedule them to repeat accordingly 
+    those classes should be added to todoist 
+read them from todoist, check if a task name is 4 letters, contains a space and either and L or a P letter at the front
+add links data and read it 
+'''
+
+def check_task_name(task_name: str):
+    '''
+    Check if todoist task name is a meeting name
+
+    Check if task name is 4 letters long 
+        AND has a space in it 
+        AND starts with an L (for Lecture) or a P (for Practice)
+    '''
+    return len(task_name)==4 and ' ' in task_name and (task_name.startswith('P') or task_name.startswith('L'))
+
+def get_meetings():
     return [
         t for t in todoist_api.get_tasks()
         if t.due
         and t.due.date == time.strftime("%Y-%m-%d")
-        and len(t.content) == 4
-        and " " in t.content
-        and ("P" in t.content or "L" in t.content)
+        and check_task_name(t.content)
     ]
 
-def load_classes_data():
-    with open(
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json"),
-        encoding="utf-8",
-        mode='r'
-    ) as f:
-        return json.load(f)
+print(get_meetings())
 
 def open_class(class_data: tuple):
     class_type, class_name = class_data
@@ -34,7 +58,7 @@ def open_class(class_data: tuple):
     pyperclip.copy(class_pin) if class_pin else None
 
 def schedule_classes():
-    classes_list = form_classes_list()
+    classes_list = get_meetings()
     # Check if classes list is empty
     if not classes_list:
         exit()
@@ -46,7 +70,7 @@ def schedule_classes():
         print(f"{full_class_type} {class_name} o {class_time}")
         schedule.every().day.at(class_time).do(open_class, (class_type, class_name))
 
-if __name__ == "__main__":
+def main():
     schedule_classes()
     schedule.every(3).hours.do(schedule_classes)
     while 1:
