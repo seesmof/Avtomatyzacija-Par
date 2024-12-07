@@ -1,11 +1,16 @@
 from dataclasses import dataclass
-from collections import namedtuple
 
 @dataclass
 class Meeting:
+    name: str 
     link: str 
     code: str = ""
+    lecture: bool = False
 
-new_meeting=Meeting("https://meet.google.com/kmj-jfpk-vtg")
-print(new_meeting.link)
-print(new_meeting)
+classes_data='''
+OS https://us04web.zoom.us/j/7235437806?pwd=T2lHS2NaOWkxN1J0UFRaOUU3YWR2QT09 3XzZDf T
+'''.strip()
+meetings=[]
+for row in classes_data.split('\n'):
+    name,link,code,lecture=
+print(meetings)
