@@ -33,10 +33,12 @@ def open_class(class_data: tuple):
     class_type, class_name = class_data
     classes_data = load_classes_data()[class_name][class_type]
     class_link, class_pin = classes_data.get("uri"), classes_data.get("pin")
+
     # Open class link in browser
     os.system(f'start "" {class_link}')
     # Copy class password if any
     copy_text(class_pin) if class_pin else None
+    # Start recording
     recorder.start_record()
 
     def get_time(m):
@@ -47,6 +49,7 @@ def open_class(class_data: tuple):
 
     t=get_time(80)
     schedule.every().day.at(t).do(recorder.stop_record)
+    schedule.every().day.at(t).do(reschedule_classes)
 
 def schedule_classes():
     classes_list = form_classes_list()
@@ -61,9 +64,13 @@ def schedule_classes():
         print(f"{full_class_type} {class_name} o {class_time}")
         schedule.every().day.at(class_time).do(open_class, (class_type, class_name))
 
-def main():
+def reschedule_classes():
+    os.system('cls')
+    schedule.clear()
     schedule_classes()
-    schedule.every(3).hours.do(schedule_classes)
+
+def main():
+    reschedule_classes()
     while 1:
         schedule.run_pending()
         time.sleep(40)
