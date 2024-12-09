@@ -34,11 +34,8 @@ def open_class(class_data: tuple):
     classes_data = load_classes_data()[class_name][class_type]
     class_link, class_pin = classes_data.get("uri"), classes_data.get("pin")
 
-    # Open class link in browser
     os.system(f'start "" {class_link}')
-    # Copy class password if any
     copy_text(class_pin) if class_pin else None
-    # Start recording
     recorder.start_record()
 
     def get_time(m):
