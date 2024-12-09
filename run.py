@@ -9,7 +9,12 @@ from todoist_api_python.api import TodoistAPI
 todoist_key = "e3b0b2ed0642281f8f775fc954ef1567ea84537c"
 todoist_api = TodoistAPI(todoist_key)
 root=os.path.dirname(os.path.abspath(__file__))
-recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
+try:
+    recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
+except:
+    obs_path=r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OBS Studio\OBS Studio (64bit).lnk"
+    os.startfile(obs_path)
+    recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
 
 def copy_text(text: str):
     command = f'echo {text.strip()}| clip'
@@ -29,6 +34,14 @@ def load_classes_data():
     with open(os.path.join(root, "data.json"),encoding="utf-8",mode='r') as f:
         return json.load(f)
 
+def get_full_class_type(short_class_type: str):
+    return 'Lekcija' if short_class_type == 'L' else 'Praktyka'
+
+def reschedule_classes():
+    os.system('cls')
+    schedule.clear()
+    schedule_classes()
+
 def open_class(class_data: tuple):
     class_type, class_name = class_data
     classes_data = load_classes_data()[class_name][class_type]
@@ -36,7 +49,11 @@ def open_class(class_data: tuple):
 
     os.system(f'start "" {class_link}')
     copy_text(class_pin) if class_pin else None
-    recorder.start_record()
+    try:
+        recorder.start_record()
+    except:
+        recorder.stop_record()
+        recorder.start_record()
 
     def get_time(m):
         '''
@@ -46,6 +63,9 @@ def open_class(class_data: tuple):
 
     t=get_time(80)
     schedule.every().day.at(t).do(recorder.stop_record)
+    recording_file_name=f'{time.strftime("%Y%m%d")}-{class_name}-{get_full_class_type(class_type)}'
+    print(recording_file_name)
+    copy_text(recording_file_name)
     schedule.every().day.at(t).do(reschedule_classes)
 
 def schedule_classes():
@@ -57,14 +77,8 @@ def schedule_classes():
     for class_data in classes_list:
         class_type, class_name = class_data.content.split()
         class_time = class_data.due.string.split()[-1]
-        full_class_type = "Lekcija" if class_type == "L" else "Praktyka"
-        print(f"{full_class_type} {class_name} o {class_time}")
+        print(f"{get_full_class_type(class_type)} {class_name} o {class_time}")
         schedule.every().day.at(class_time).do(open_class, (class_type, class_name))
-
-def reschedule_classes():
-    os.system('cls')
-    schedule.clear()
-    schedule_classes()
 
 def main():
     reschedule_classes()
