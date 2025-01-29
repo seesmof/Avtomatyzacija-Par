@@ -1,3 +1,1 @@
 - L OS - https://us04web.zoom.us/j/7235437806?pwd=T2lHS2NaOWkxN1J0UFRaOUU3YWR2QT09 - 3XzZDf
-- P OS - https://us02web.zoom.us/j/5151534723 - 152334
-- P VP - https://us02web.zoom.us/j/5151534723
