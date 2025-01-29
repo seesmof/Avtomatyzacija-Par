@@ -1,10 +1,10 @@
-import os
-import json
-import time
-import schedule
-import datetime
-import obsws_python as obs
 from todoist_api_python.api import TodoistAPI
+import obsws_python as obs
+import datetime
+import schedule
+import time
+import json
+import os
 
 todoist_key = "e3b0b2ed0642281f8f775fc954ef1567ea84537c"
 todoist_api = TodoistAPI(todoist_key)
@@ -56,9 +56,6 @@ def open_class(class_data: tuple):
         recorder.start_record()
 
     def get_time(m):
-        '''
-        Get time after m minutes
-        '''
         return (datetime.datetime.now() + datetime.timedelta(minutes=m)).strftime('%H:%M')
 
     t=get_time(80)
