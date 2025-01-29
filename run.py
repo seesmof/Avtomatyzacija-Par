@@ -1,14 +1,15 @@
 from todoist_api_python.api import TodoistAPI
+from dataclasses import dataclass
 import obsws_python as obs
 import datetime
 import schedule
 import time
-import json
 import os
+
 
 todoist_key = "e3b0b2ed0642281f8f775fc954ef1567ea84537c"
 todoist_api = TodoistAPI(todoist_key)
-root=os.path.dirname(os.path.abspath(__file__))
+root_folder_path=os.path.dirname(os.path.abspath(__file__))
 try:
     recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
 except:
@@ -16,11 +17,31 @@ except:
     os.startfile(obs_path)
     recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
 
+@dataclass
+class ParaData:
+    name: str
+    link: str
+    code: str = ""
+
+def make_paras_data():
+    target_file_path=os.path.join(root_folder_path,'data.md')
+    with open(target_file_path,encoding="utf-8",mode='r') as f:
+        lines=f.readlines()
+    data: list[ParaData] = list()
+    for l in lines:
+        p=ParaData(*l[2:].strip().split(' - '))
+        data.append(p)
+    return data
+
+paras_data=make_paras_data()
+
+
 def copy_text(text: str):
     command = f'echo {text.strip()}| clip'
     os.system(command)
 
-def form_classes_list():
+
+def get_scheduled_paras():
     return [
         t for t in todoist_api.get_tasks()
         if t.due
@@ -30,25 +51,29 @@ def form_classes_list():
         and ("P" in t.content or "L" in t.content)
     ]
 
-def load_classes_data():
-    with open(os.path.join(root, "data.json"),encoding="utf-8",mode='r') as f:
-        return json.load(f)
 
-def get_full_class_type(short_class_type: str):
+def get_full_para_kind(short_class_type: str):
     return 'Lekcija' if short_class_type == 'L' else 'Praktyka'
 
-def reschedule_classes():
+
+def reschedule_paras():
     os.system('cls')
     schedule.clear()
-    schedule_classes()
+    schedule_paras()
 
-def open_class(class_data: tuple):
-    class_type, class_name = class_data
-    classes_data = load_classes_data()[class_name][class_type]
-    class_link, class_pin = classes_data.get("uri"), classes_data.get("pin")
 
-    os.system(f'start "" {class_link}')
-    copy_text(class_pin) if class_pin else None
+def close_para(para_abbr: str = "L OS"):
+    recorder.stop_record()
+    kind,name=para_abbr.split(' ')
+    file_name=f'{time.strftime("%Y%m%d")}_{name}-{get_full_para_kind(kind)}'
+    copy_text(file_name)
+
+
+def open_para(para_abbr: str = "L OS"):
+    this_class_data=[d for d in paras_data if d.name==para_abbr][0]
+
+    os.system(f'start "" {this_class_data.link}')
+    copy_text(this_class_data.code) if this_class_data.code else None
     try:
         recorder.start_record()
     except:
@@ -59,26 +84,22 @@ def open_class(class_data: tuple):
         return (datetime.datetime.now() + datetime.timedelta(minutes=m)).strftime('%H:%M')
 
     t=get_time(80)
-    schedule.every().day.at(t).do(recorder.stop_record)
-    recording_file_name=f'{time.strftime("%Y%m%d")}-{class_name}-{get_full_class_type(class_type)}'
-    print(recording_file_name)
-    copy_text(recording_file_name)
-    schedule.every().day.at(t).do(reschedule_classes)
+    schedule.every().day.at(t).do(close_para,para_abbr)
+    schedule.every().day.at(t).do(reschedule_paras)
 
-def schedule_classes():
-    classes_list = form_classes_list()
-    # Check if classes list is empty
-    if not classes_list:
+def schedule_paras():
+    scheduled_paras = get_scheduled_paras()
+    if not scheduled_paras:
         exit()
 
-    for class_data in classes_list:
-        class_type, class_name = class_data.content.split()
-        class_time = class_data.due.string.split()[-1]
-        print(f"{get_full_class_type(class_type)} {class_name} o {class_time}")
-        schedule.every().day.at(class_time).do(open_class, (class_type, class_name))
+    for para_data in scheduled_paras:
+        para_kind, para_name = para_data.content.split(' ')
+        para_scheduled_time = para_data.due.string.split()[-1]
+        print(f"{get_full_para_kind(para_kind)} {para_name} o {para_scheduled_time}")
+        schedule.every().day.at(para_scheduled_time).do(open_para, f'{para_kind} {para_name}')
 
 def main():
-    reschedule_classes()
+    reschedule_paras()
     while 1:
         schedule.run_pending()
         time.sleep(40)
