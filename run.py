@@ -62,7 +62,10 @@ def open_para(para_abbr: str = "L IV"):
     schedule.every().day.at(t).do(reschedule_paras)
 
 def close_para(para_abbr: str = "L IV"):
-    # recorder.stop_record()
+    try:
+        recorder.stop_record()
+        time.sleep(10)
+    except: pass
     kind,name=para_abbr.split(' ')
 
     def get_latest_file():
@@ -84,9 +87,7 @@ def make_paras_data():
         lines=f.readlines()
 
     for line in lines:
-        # Remove the beginning `- ` and leading symbols
         clean_line=line[2:].strip()
-
         para=ParaData(*clean_line.split(' - '))
         paras.append(para)
 
