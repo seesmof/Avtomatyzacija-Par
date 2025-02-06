@@ -67,11 +67,14 @@ def close_para(para_abbr: str = "L IV"):
 
     def get_latest_file():
         recordings_folder_path=os.path.join(lib.recordings_folder)
-        file_paths=[os.path.join(recordings_folder_path,file_name) for file_name in os.listdir(recordings_folder_path)]
+        file_paths=[os.path.join(recordings_folder_path,file_name) for file_name in os.listdir(recordings_folder_path) if '.' in file_name]
         latest_file=max(file_paths, key=os.path.getmtime)
         return latest_file
 
     latest_file_path=get_latest_file()
+    file_name=latest_file_path.split('\\')[-1]
+    moved_file_path=os.path.join(lib.recordings_folder,name,kind,file_name)
+    os.replace(latest_file_path,moved_file_path)
 
 def make_paras_data():
     target_file_path=os.path.join(r"E:\Notatnyk\Університет\20250130174547 32 Інформація про курси - посилання на заняття, список завдань та викладачів з дисциплін.md")
