@@ -39,3 +39,22 @@ for n in unique_names:
 
     print(nazva)
     os.mkdir(os.path.join(p,nazva))
+
+'''
+JESUS CHRIST IS LORD
+
+Making folders for each course
+'''
+
+import os
+
+from lib.data import ParaData
+
+p=os.path.join(r'C:\Users\seesm\Videos\Лекції')
+
+subfolders= [folder.path for folder in os.scandir(p) if folder.is_dir()]
+for folder in subfolders:
+    lecture_folder=os.path.join(folder,'L')
+    practice_folder=os.path.join(folder,'P')
+    os.mkdir(lecture_folder)
+    os.mkdir(practice_folder)

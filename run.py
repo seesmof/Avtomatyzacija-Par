@@ -16,12 +16,6 @@ except:
     os.startfile(obs_path)
     recorder = obs.ReqClient(host='localhost', port=4455, password='Fu2Xfs5vMePGSIkR', timeout=3)
 
-def close_para(para_abbr: str = "L IV"):
-    recorder.stop_record()
-    kind,name=para_abbr.split(' ')
-    file_name=f'{time.strftime("%Y%m%d")}_{name}-{lib.get_full_para_kind(kind)}'
-    lib.copy_text(file_name)
-
 def reschedule_paras():
     os.system('cls')
     schedule.clear()
@@ -66,6 +60,18 @@ def open_para(para_abbr: str = "L IV"):
     t=get_time(80)
     schedule.every().day.at(t).do(close_para,para_abbr)
     schedule.every().day.at(t).do(reschedule_paras)
+
+def close_para(para_abbr: str = "L IV"):
+    # recorder.stop_record()
+    kind,name=para_abbr.split(' ')
+
+    def get_latest_file():
+        recordings_folder_path=os.path.join(lib.recordings_folder)
+        file_paths=[os.path.join(recordings_folder_path,file_name) for file_name in os.listdir(recordings_folder_path)]
+        latest_file=max(file_paths, key=os.path.getmtime)
+        return latest_file
+
+    latest_file_path=get_latest_file()
 
 def make_paras_data():
     target_file_path=os.path.join(r"E:\Notatnyk\Університет\20250130174547 32 Інформація про курси - посилання на заняття, список завдань та викладачів з дисциплін.md")
