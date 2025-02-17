@@ -4,5 +4,6 @@ JESUS CHRIST IS LORD
 Making folders for each course
 '''
 
-n=5
-print(f'{n:0>2}')
+from run import close_para, move_recording_to_its_folder
+
+move_recording_to_its_folder('L KP')
