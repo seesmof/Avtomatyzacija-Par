@@ -26,12 +26,19 @@ def schedule_paras():
     if not scheduled_paras:
         exit()
 
+    def get_earlier_time(time: str):
+        BEFORE_MINTES=3
+
+        hour,minute=time.split(':')
+        return f'{hour}:{int(minute)-BEFORE_MINTES:0>2}'
+
     for para_data in scheduled_paras:
         para_kind, para_name = para_data.content.split(' ')
         para_kind, para_name = para_kind.upper(), para_name.upper()
         para_scheduled_time = para_data.due.string.split()[-1]
         print(f"{lib.get_full_para_kind(para_kind)} {para_name} o {para_scheduled_time}")
-        schedule.every().day.at(para_scheduled_time).do(open_para, f'{para_kind} {para_name}')
+        earlier_time=get_earlier_time(para_scheduled_time)
+        schedule.every().day.at(earlier_time).do(open_para, f'{para_kind} {para_name}')
 
 def get_scheduled_paras():
     return [
