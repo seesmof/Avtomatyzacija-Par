@@ -64,7 +64,9 @@ def open_para(para_abbr: str = "L IV"):
     def get_time(m):
         return (datetime.datetime.now() + datetime.timedelta(minutes=m)).strftime('%H:%M')
 
-    t=get_time(80)
+    CLASS_DURATION_MINUTES=80
+    HOW_LONG_TO_RECORD_FOR=CLASS_DURATION_MINUTES+10
+    t=get_time(HOW_LONG_TO_RECORD_FOR)
     schedule.every().day.at(t).do(close_para,para_abbr)
     schedule.every().day.at(t).do(reschedule_paras)
 
@@ -86,7 +88,8 @@ def close_para(para_abbr: str = "L IV"):
     try:
         recorder.stop_record()
         time.sleep(10)
-    except: pass
+    except:
+        print('Failed to stop recording')
     move_recording_to_its_folder(para_abbr)
 
 def make_paras_data():
