@@ -63,8 +63,8 @@ def open_para(para_abbr: str = "L IV"):
     lib.copy_text(this_class_data.code) if this_class_data.code else None
     try:
         recorder.start_record()
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
     def get_time(m) -> str:
         return (datetime.datetime.now() + datetime.timedelta(minutes=m)).strftime('%H:%M')
